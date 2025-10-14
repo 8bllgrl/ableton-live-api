@@ -101,6 +101,8 @@ const getDeviceAndParameterDetails = async (firstDevice) => {
         const displayValue = await param.get('display_value'); 
         const valueItems = await param.get('value_items'); 
         const isEnabled = await param.get('is_enabled');
+        const minValue = await param.get('min'); 
+        const maxValue = await param.get('max'); 
 
         let currentValueItem = null;
         if (valueItems && valueItems.length > 0 && typeof value === 'number') {
@@ -117,7 +119,9 @@ const getDeviceAndParameterDetails = async (firstDevice) => {
             displayValue,
             enumOptions: valueItems,
             currentValueItem,
-            isEnabled
+            isEnabled,
+            minValue, 
+            maxValue 
         });
     }
     

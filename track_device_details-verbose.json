@@ -198,6 +198,8 @@
                 "isModifiable": true,
                 "rawValue": 3,
                 "displayValue": 3,
+                "minValue": 0,
+                "maxValue": 9,
                 "enumOptions": [
                     "Mono",
                     2,
@@ -217,21 +219,27 @@
                 "name": "PB Range",
                 "isModifiable": true,
                 "rawValue": 0.1666666716337204,
-                "displayValue": 2
+                "displayValue": 2,
+                "minValue": 0,
+                "maxValue": 1
             },
             "volume": {
                 "id": "12",
                 "name": "Volume",
                 "isModifiable": true,
                 "rawValue": 0.7047889828681946,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "note_p_b_range": {
                 "id": "13",
                 "name": "Note PB Range",
                 "isModifiable": true,
                 "rawValue": 48,
-                "displayValue": 48
+                "displayValue": 48,
+                "minValue": 0,
+                "maxValue": 48
             },
             "press_dest_a": {
                 "id": "14",
@@ -239,6 +247,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 46,
                 "enumOptions": [
                     "No Destination",
                     "Vibrato Amount",
@@ -295,7 +305,9 @@
                 "name": "Press Amt A",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 50
+                "displayValue": 50,
+                "minValue": -1,
+                "maxValue": 1
             },
             "press_dest_b": {
                 "id": "16",
@@ -303,6 +315,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 46,
                 "enumOptions": [
                     "No Destination",
                     "Vibrato Amount",
@@ -359,7 +373,9 @@
                 "name": "Press Amt B",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 50
+                "displayValue": 50,
+                "minValue": -1,
+                "maxValue": 1
             },
             "slide_dest_a": {
                 "id": "18",
@@ -367,6 +383,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 46,
                 "enumOptions": [
                     "No Destination",
                     "Vibrato Amount",
@@ -423,7 +441,9 @@
                 "name": "Slide Amt A",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 50
+                "displayValue": 50,
+                "minValue": -1,
+                "maxValue": 1
             },
             "slide_dest_b": {
                 "id": "20",
@@ -431,6 +451,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 46,
                 "enumOptions": [
                     "No Destination",
                     "Vibrato Amount",
@@ -487,28 +509,36 @@
                 "name": "Slide Amt B",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 50
+                "displayValue": 50,
+                "minValue": -1,
+                "maxValue": 1
             },
             "octave": {
                 "id": "22",
                 "name": "Octave",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -3,
+                "maxValue": 3
             },
             "semitone": {
                 "id": "23",
                 "name": "Semitone",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -12,
+                "maxValue": 12
             },
             "detune": {
                 "id": "24",
                 "name": "Detune",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "unison_voices": {
                 "id": "26",
@@ -516,6 +546,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1,
                 "enumOptions": [
                     2,
                     4
@@ -527,14 +559,18 @@
                 "name": "Unison Detune",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "unison_delay": {
                 "id": "28",
                 "name": "Unison Delay",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "key_priority": {
                 "id": "29",
@@ -542,6 +578,8 @@
                 "isModifiable": true,
                 "rawValue": 2,
                 "displayValue": 2,
+                "minValue": 0,
+                "maxValue": 2,
                 "enumOptions": [
                     "High",
                     "Low",
@@ -554,63 +592,81 @@
                 "name": "Key Stretch",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "key_error": {
                 "id": "31",
                 "name": "Key Error",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "vib_speed": {
                 "id": "33",
                 "name": "Vib Speed",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 5.099999904632568
+                "displayValue": 5.099999904632568,
+                "minValue": 0,
+                "maxValue": 1
             },
             "vib_fade_in": {
                 "id": "34",
                 "name": "Vib Fade-In",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "vib_amount": {
                 "id": "35",
                 "name": "Vib Amount",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "vib_error": {
                 "id": "36",
                 "name": "Vib Error",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "vib_delay": {
                 "id": "37",
                 "name": "Vib Delay",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "vib_<_mod_wh": {
                 "id": "38",
                 "name": "Vib < ModWh",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "glide_time": {
                 "id": "40",
                 "name": "Glide Time",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 50
+                "displayValue": 50,
+                "minValue": 0,
+                "maxValue": 1
             },
             "glide_mode": {
                 "id": "41",
@@ -618,6 +674,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1,
                 "enumOptions": [
                     "Const",
                     "Prop"
@@ -629,21 +687,27 @@
                 "name": "Noise Color",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 682
+                "displayValue": 682,
+                "minValue": 0,
+                "maxValue": 1
             },
             "noise_balance": {
                 "id": "45",
                 "name": "Noise Balance",
                 "isModifiable": true,
                 "rawValue": 1,
-                "displayValue": 100
+                "displayValue": 100,
+                "minValue": 0,
+                "maxValue": 1
             },
             "noise_level": {
                 "id": "46",
                 "name": "Noise Level",
                 "isModifiable": true,
                 "rawValue": 0.8062000274658203,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "o_s_c1_shape": {
                 "id": "48",
@@ -651,6 +715,8 @@
                 "isModifiable": true,
                 "rawValue": 1,
                 "displayValue": 1,
+                "minValue": 0,
+                "maxValue": 3,
                 "possibleShapes": [
                     "Sine",
                     "Saw",
@@ -665,14 +731,18 @@
                 "name": "OSC1 Octave",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -3,
+                "maxValue": 3
             },
             "o_s_c1_semi": {
                 "id": "50",
                 "name": "OSC1 Semi",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -12,
+                "maxValue": 12
             },
             "o_s_c1_mode": {
                 "id": "51",
@@ -680,6 +750,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1,
                 "enumOptions": [
                     "Sub",
                     "Sync"
@@ -691,70 +763,90 @@
                 "name": "PEG1 Time",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 50
+                "displayValue": 50,
+                "minValue": 0,
+                "maxValue": 1
             },
             "o_s_c1_detune": {
                 "id": "53",
                 "name": "OSC1 Detune",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "o1_keytrack": {
                 "id": "54",
                 "name": "O1 Keytrack",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 100
+                "displayValue": 100,
+                "minValue": 0,
+                "maxValue": 1
             },
             "o_s_c1_p_w": {
                 "id": "55",
                 "name": "OSC1 PW",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 50
+                "displayValue": 50,
+                "minValue": 0,
+                "maxValue": 1
             },
             "o1_sub_sync": {
                 "id": "56",
                 "name": "O1 Sub/Sync",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "o_s_c1_balance": {
                 "id": "57",
                 "name": "OSC1 Balance",
                 "isModifiable": true,
                 "rawValue": 1,
-                "displayValue": 100
+                "displayValue": 100,
+                "minValue": 0,
+                "maxValue": 1
             },
             "p_e_g1_amount": {
                 "id": "58",
                 "name": "PEG1 Amount",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "o_s_c1_<_l_f_o": {
                 "id": "59",
                 "name": "OSC1 < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "o1_p_w_<_l_f_o": {
                 "id": "60",
                 "name": "O1 PW < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "o_s_c1_level": {
                 "id": "61",
                 "name": "OSC1 Level",
                 "isModifiable": true,
                 "rawValue": 0.8062000274658203,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f1_type": {
                 "id": "63",
@@ -762,6 +854,8 @@
                 "isModifiable": true,
                 "rawValue": 1,
                 "displayValue": 1,
+                "minValue": 0,
+                "maxValue": 9,
                 "enumOptions": [
                     "Low-pass 12dB/oct",
                     "Low-pass 24dB/oct",
@@ -782,6 +876,8 @@
                 "isModifiable": true,
                 "rawValue": 1,
                 "displayValue": 1,
+                "minValue": 0,
+                "maxValue": 6,
                 "enumOptions": [
                     "Off",
                     "Sym1",
@@ -798,63 +894,81 @@
                 "name": "F1 Freq < Key",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "f1_freq": {
                 "id": "66",
                 "name": "F1 Freq",
                 "isModifiable": true,
                 "rawValue": 1,
-                "displayValue": 22000
+                "displayValue": 22000,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f1_reso_<_key": {
                 "id": "67",
                 "name": "F1 Reso < Key",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "f1_resonance": {
                 "id": "68",
                 "name": "F1 Resonance",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f1_to_f2": {
                 "id": "69",
                 "name": "F1 To F2",
                 "isModifiable": true,
                 "rawValue": 1,
-                "displayValue": 100
+                "displayValue": 100,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f1_freq_<_l_f_o": {
                 "id": "70",
                 "name": "F1 Freq < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "f1_freq_<_env": {
                 "id": "71",
                 "name": "F1 Freq < Env",
                 "isModifiable": true,
                 "rawValue": 0.7047610878944397,
-                "displayValue": 4
+                "displayValue": 4,
+                "minValue": -1,
+                "maxValue": 1
             },
             "f1_res_<_l_f_o": {
                 "id": "72",
                 "name": "F1 Res < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "f1_res_<_env": {
                 "id": "73",
                 "name": "F1 Res < Env",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "f_e_g1_loop": {
                 "id": "75",
@@ -862,6 +976,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 3,
                 "enumOptions": [
                     "Off",
                     "AD-R",
@@ -875,98 +991,126 @@
                 "name": "FEG1 A < Vel",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f_e_g1_attack": {
                 "id": "79",
                 "name": "FEG1 Attack",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0.004999999888241291
+                "displayValue": 0.004999999888241291,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f_e_g1_decay": {
                 "id": "80",
                 "name": "FEG1 Decay",
                 "isModifiable": true,
                 "rawValue": 0.6000000238418579,
-                "displayValue": 0.6259999871253967
+                "displayValue": 0.6259999871253967,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f_e_g1_<_vel": {
                 "id": "81",
                 "name": "FEG1 < Vel",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f_e_g1_sustain": {
                 "id": "82",
                 "name": "FEG1 Sustain",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f_e_g1_s_time": {
                 "id": "83",
                 "name": "FEG1 S Time",
                 "isModifiable": true,
                 "rawValue": 1,
-                "displayValue": 1000
+                "displayValue": 1000,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f_e_g1_rel": {
                 "id": "84",
                 "name": "FEG1 Rel",
                 "isModifiable": true,
                 "rawValue": 0.4847841262817383,
-                "displayValue": 0.25
+                "displayValue": 0.25,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_m_p1_<_key": {
                 "id": "86",
                 "name": "AMP1 < Key",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "a_m_p1_level": {
                 "id": "87",
                 "name": "AMP1 Level",
                 "isModifiable": true,
                 "rawValue": 0.4743117690086365,
-                "displayValue": -18
+                "displayValue": -18,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a1_pan_<_key": {
                 "id": "88",
                 "name": "A1 Pan < Key",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "a_m_p1_pan": {
                 "id": "89",
                 "name": "AMP1 Pan",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_m_p1_<_l_f_o": {
                 "id": "90",
                 "name": "AMP1 < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "a1_pan_<_l_f_o": {
                 "id": "91",
                 "name": "A1 Pan < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "a1_pan_<_env": {
                 "id": "92",
                 "name": "A1 Pan < Env",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "a_e_g1_loop": {
                 "id": "94",
@@ -974,6 +1118,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 3,
                 "enumOptions": [
                     "Off",
                     "AD-R",
@@ -987,49 +1133,63 @@
                 "name": "AEG1 A < Vel",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_e_g1_attack": {
                 "id": "98",
                 "name": "AEG1 Attack",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0.004999999888241291
+                "displayValue": 0.004999999888241291,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_e_g1_decay": {
                 "id": "99",
                 "name": "AEG1 Decay",
                 "isModifiable": true,
-                "rawValue": 0.6000000238418579,
-                "displayValue": 0.6259999871253967
+                "rawValue": 0.581818163394928,
+                "displayValue": 0.5419999957084656,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_e_g1_<_vel": {
                 "id": "100",
                 "name": "AEG1 < Vel",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 4
+                "displayValue": 4,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_e_g1_sustain": {
                 "id": "101",
                 "name": "AEG1 Sustain",
                 "isModifiable": true,
-                "rawValue": 0.5,
-                "displayValue": 0
+                "rawValue": 0.5090909004211426,
+                "displayValue": 1,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_e_g1_s_time": {
                 "id": "102",
                 "name": "AEG1 S Time",
                 "isModifiable": true,
                 "rawValue": 1,
-                "displayValue": 1000
+                "displayValue": 1000,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_e_g1_rel": {
                 "id": "103",
                 "name": "AEG1 Rel",
                 "isModifiable": true,
                 "rawValue": 0.5718053579330444,
-                "displayValue": 0.5
+                "displayValue": 0.5,
+                "minValue": 0,
+                "maxValue": 1
             },
             "l_f_o1_shape": {
                 "id": "105",
@@ -1037,6 +1197,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 4,
                 "enumOptions": [
                     "Sine",
                     "Tri",
@@ -1051,7 +1213,9 @@
                 "name": "LFO1 SncRate",
                 "isModifiable": true,
                 "rawValue": 13,
-                "displayValue": 13
+                "displayValue": 13,
+                "minValue": 0,
+                "maxValue": 23
             },
             "l_f_o1_sync": {
                 "id": "107",
@@ -1059,6 +1223,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1,
                 "enumOptions": [
                     "Hertz",
                     "Beat"
@@ -1070,35 +1236,45 @@
                 "name": "LFO1 PW",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 50
+                "displayValue": 50,
+                "minValue": 0,
+                "maxValue": 1
             },
             "l_f_o1_speed": {
                 "id": "110",
                 "name": "LFO1 Speed",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 0.8999999761581421
+                "displayValue": 0.8999999761581421,
+                "minValue": 0,
+                "maxValue": 1
             },
             "l_f_o1_phase": {
                 "id": "111",
                 "name": "LFO1 Phase",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "l_f_o1_delay": {
                 "id": "112",
                 "name": "LFO1 Delay",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "l_f_o1_fade_in": {
                 "id": "113",
                 "name": "LFO1 Fade In",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "o_s_c2_shape": {
                 "id": "115",
@@ -1106,6 +1282,8 @@
                 "isModifiable": true,
                 "rawValue": 1,
                 "displayValue": 1,
+                "minValue": 0,
+                "maxValue": 3,
                 "possibleShapes": [
                     "Sine",
                     "Saw",
@@ -1120,14 +1298,18 @@
                 "name": "OSC2 Octave",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -3,
+                "maxValue": 3
             },
             "o_s_c2_semi": {
                 "id": "117",
                 "name": "OSC2 Semi",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -12,
+                "maxValue": 12
             },
             "o_s_c2_mode": {
                 "id": "118",
@@ -1135,6 +1317,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1,
                 "enumOptions": [
                     "Sub",
                     "Sync"
@@ -1146,70 +1330,90 @@
                 "name": "PEG2 Time",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 50
+                "displayValue": 50,
+                "minValue": 0,
+                "maxValue": 1
             },
             "o_s_c2_detune": {
                 "id": "120",
                 "name": "OSC2 Detune",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "o2_keytrack": {
                 "id": "121",
                 "name": "O2 Keytrack",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 100
+                "displayValue": 100,
+                "minValue": 0,
+                "maxValue": 1
             },
             "o_s_c2_p_w": {
                 "id": "122",
                 "name": "OSC2 PW",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 50
+                "displayValue": 50,
+                "minValue": 0,
+                "maxValue": 1
             },
             "o2_sub_sync": {
                 "id": "123",
                 "name": "O2 Sub/Sync",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "o_s_c2_balance": {
                 "id": "124",
                 "name": "OSC2 Balance",
                 "isModifiable": true,
                 "rawValue": 1,
-                "displayValue": 100
+                "displayValue": 100,
+                "minValue": 0,
+                "maxValue": 1
             },
             "p_e_g2_amount": {
                 "id": "125",
                 "name": "PEG2 Amount",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "o_s_c2_<_l_f_o": {
                 "id": "126",
                 "name": "OSC2 < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "o2_p_w_<_l_f_o": {
                 "id": "127",
                 "name": "O2 PW < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "o_s_c2_level": {
                 "id": "128",
                 "name": "OSC2 Level",
                 "isModifiable": true,
                 "rawValue": 0.8062000274658203,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f2_type": {
                 "id": "130",
@@ -1217,6 +1421,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 9,
                 "enumOptions": [
                     "Low-pass 12dB/oct",
                     "Low-pass 24dB/oct",
@@ -1237,6 +1443,8 @@
                 "isModifiable": true,
                 "rawValue": 1,
                 "displayValue": 1,
+                "minValue": 0,
+                "maxValue": 6,
                 "enumOptions": [
                     "Off",
                     "Sym1",
@@ -1253,56 +1461,72 @@
                 "name": "F2 Freq < Key",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "f2_freq": {
                 "id": "133",
                 "name": "F2 Freq",
                 "isModifiable": true,
                 "rawValue": 1,
-                "displayValue": 22000
+                "displayValue": 22000,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f2_reso_<_key": {
                 "id": "134",
                 "name": "F2 Reso < Key",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "f2_resonance": {
                 "id": "135",
                 "name": "F2 Resonance",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f2_freq_<_l_f_o": {
                 "id": "137",
                 "name": "F2 Freq < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "f2_freq_<_env": {
                 "id": "138",
                 "name": "F2 Freq < Env",
                 "isModifiable": true,
                 "rawValue": 0.7047610878944397,
-                "displayValue": 4
+                "displayValue": 4,
+                "minValue": -1,
+                "maxValue": 1
             },
             "f2_res_<_l_f_o": {
                 "id": "139",
                 "name": "F2 Res < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "f2_res_<_env": {
                 "id": "140",
                 "name": "F2 Res < Env",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "f_e_g2_loop": {
                 "id": "142",
@@ -1310,6 +1534,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 3,
                 "enumOptions": [
                     "Off",
                     "AD-R",
@@ -1323,98 +1549,126 @@
                 "name": "FEG2 A < Vel",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f_e_g2_attack": {
                 "id": "146",
                 "name": "FEG2 Attack",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0.004999999888241291
+                "displayValue": 0.004999999888241291,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f_e_g2_decay": {
                 "id": "147",
                 "name": "FEG2 Decay",
                 "isModifiable": true,
                 "rawValue": 0.6000000238418579,
-                "displayValue": 0.6259999871253967
+                "displayValue": 0.6259999871253967,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f_e_g2_<_vel": {
                 "id": "148",
                 "name": "FEG2 < Vel",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f_e_g2_sustain": {
                 "id": "149",
                 "name": "FEG2 Sustain",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f_e_g2_s_time": {
                 "id": "150",
                 "name": "FEG2 S Time",
                 "isModifiable": true,
                 "rawValue": 1,
-                "displayValue": 1000
+                "displayValue": 1000,
+                "minValue": 0,
+                "maxValue": 1
             },
             "f_e_g2_rel": {
                 "id": "151",
                 "name": "FEG2 Rel",
                 "isModifiable": true,
                 "rawValue": 0.4847841262817383,
-                "displayValue": 0.25
+                "displayValue": 0.25,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_m_p2_<_key": {
                 "id": "153",
                 "name": "AMP2 < Key",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "a_m_p2_level": {
                 "id": "154",
                 "name": "AMP2 Level",
                 "isModifiable": true,
                 "rawValue": 0.4743117690086365,
-                "displayValue": -18
+                "displayValue": -18,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a2_pan_<_key": {
                 "id": "155",
                 "name": "A2 Pan < Key",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "a_m_p2_pan": {
                 "id": "156",
                 "name": "AMP2 Pan",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_m_p2_<_l_f_o": {
                 "id": "157",
                 "name": "AMP2 < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "a2_pan_<_l_f_o": {
                 "id": "158",
                 "name": "A2 Pan < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "a2_pan_<_env": {
                 "id": "159",
                 "name": "A2 Pan < Env",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": -1,
+                "maxValue": 1
             },
             "a_e_g2_loop": {
                 "id": "161",
@@ -1422,6 +1676,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 3,
                 "enumOptions": [
                     "Off",
                     "AD-R",
@@ -1435,49 +1691,63 @@
                 "name": "AEG2 A < Vel",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_e_g2_attack": {
                 "id": "165",
                 "name": "AEG2 Attack",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0.004999999888241291
+                "displayValue": 0.004999999888241291,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_e_g2_decay": {
                 "id": "166",
                 "name": "AEG2 Decay",
                 "isModifiable": true,
                 "rawValue": 0.6000000238418579,
-                "displayValue": 0.6259999871253967
+                "displayValue": 0.6259999871253967,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_e_g2_<_vel": {
                 "id": "167",
                 "name": "AEG2 < Vel",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 4
+                "displayValue": 4,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_e_g2_sustain": {
                 "id": "168",
                 "name": "AEG2 Sustain",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_e_g2_s_time": {
                 "id": "169",
                 "name": "AEG2 S Time",
                 "isModifiable": true,
                 "rawValue": 1,
-                "displayValue": 1000
+                "displayValue": 1000,
+                "minValue": 0,
+                "maxValue": 1
             },
             "a_e_g2_rel": {
                 "id": "170",
                 "name": "AEG2 Rel",
                 "isModifiable": true,
                 "rawValue": 0.5718053579330444,
-                "displayValue": 0.5
+                "displayValue": 0.5,
+                "minValue": 0,
+                "maxValue": 1
             },
             "l_f_o2_shape": {
                 "id": "172",
@@ -1485,6 +1755,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 4,
                 "enumOptions": [
                     "Sine",
                     "Tri",
@@ -1499,7 +1771,9 @@
                 "name": "LFO2 SncRate",
                 "isModifiable": true,
                 "rawValue": 13,
-                "displayValue": 13
+                "displayValue": 13,
+                "minValue": 0,
+                "maxValue": 23
             },
             "l_f_o2_sync": {
                 "id": "174",
@@ -1507,6 +1781,8 @@
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1,
                 "enumOptions": [
                     "Hertz",
                     "Beat"
@@ -1518,35 +1794,45 @@
                 "name": "LFO2 PW",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 50
+                "displayValue": 50,
+                "minValue": 0,
+                "maxValue": 1
             },
             "l_f_o2_speed": {
                 "id": "177",
                 "name": "LFO2 Speed",
                 "isModifiable": true,
                 "rawValue": 0.5,
-                "displayValue": 0.8999999761581421
+                "displayValue": 0.8999999761581421,
+                "minValue": 0,
+                "maxValue": 1
             },
             "l_f_o2_phase": {
                 "id": "178",
                 "name": "LFO2 Phase",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "l_f_o2_delay": {
                 "id": "179",
                 "name": "LFO2 Delay",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             },
             "l_f_o2_fade_in": {
                 "id": "180",
                 "name": "LFO2 Fade In",
                 "isModifiable": true,
                 "rawValue": 0,
-                "displayValue": 0
+                "displayValue": 0,
+                "minValue": 0,
+                "maxValue": 1
             }
         }
     }

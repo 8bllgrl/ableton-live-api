@@ -50,6 +50,8 @@ const buildTargetedOscShapeDetails = (detail) => {
         isModifiable: detail.isEnabled,
         rawValue: detail.rawValue,
         displayValue: detail.displayValue,
+        minValue: detail.minValue,
+        maxValue: detail.maxValue,
         possibleShapes: detail.enumOptions || [], 
         currentIndex: currentIndex,
         currentShapeName: currentShapeName
@@ -62,7 +64,9 @@ const buildStandardParameterDetails = (detail) => {
         name: detail.name,
         isModifiable: detail.isEnabled,
         rawValue: detail.rawValue,
-        displayValue: detail.displayValue
+        displayValue: detail.displayValue,
+        minValue: detail.minValue,
+        maxValue: detail.maxValue
     };
     if (detail.enumOptions && detail.enumOptions.length > 0) {
         result.enumOptions = detail.enumOptions;
