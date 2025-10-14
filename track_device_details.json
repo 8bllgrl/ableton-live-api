@@ -1014,8 +1014,8 @@
                 "id": "99",
                 "name": "AEG1 Decay",
                 "isModifiable": true,
-                "rawValue": 0.581818163394928,
-                "displayValue": 0.5419999957084656,
+                "rawValue": 0.5272727012634277,
+                "displayValue": 0.35100001096725464,
                 "minValue": 0,
                 "maxValue": 1
             },
@@ -1032,8 +1032,8 @@
                 "id": "101",
                 "name": "AEG1 Sustain",
                 "isModifiable": true,
-                "rawValue": 0.5090909004211426,
-                "displayValue": 1,
+                "rawValue": 0,
+                "displayValue": 0,
                 "minValue": 0,
                 "maxValue": 1
             },
