@@ -1,24 +1,31 @@
-const printTrackProperties = (trackDetails) => {
-    console.log(`\n--- TRACK DETAILS (Index ${trackDetails.index}) ---`);
-    console.log(`Track Name: ${trackDetails.name}`);
-    console.log(`Track Type: ${trackDetails.type}`);
-    console.log(`Armed for Recording: ${trackDetails.isArmed}`);
-    console.log(`Muted: ${trackDetails.isMuted}`);
-    console.log(`Soloed: ${trackDetails.isSolo}`);
-    console.log(`Part of a Group: ${trackDetails.isGrouped}`);
-    console.log(`Volume (Raw Value): ${trackDetails.volume.toFixed(4)}`);
-    console.log(`Panning (Raw Value): ${trackDetails.panning.toFixed(4)}`);
+/**
+ * Creates a structured object from track details.
+ * @param {object} trackDetails
+ * @returns {object}
+ */
+const buildTrackProperties = (trackDetails) => {
+    return {
+        index: trackDetails.index,
+        name: trackDetails.name,
+        type: trackDetails.type,
+        isArmed: trackDetails.isArmed,
+        isMuted: trackDetails.isMuted,
+        isSolo: trackDetails.isSolo,
+        isGrouped: trackDetails.isGrouped,
+        volume: trackDetails.volume,
+        panning: trackDetails.panning
+    };
 };
 
-const printTargetedOscShapeDetails = (detail) => {
-    let rawValueStr = 'N/A';
-    if (detail.rawValue !== undefined && detail.rawValue !== null) {
-        rawValueStr = typeof detail.rawValue === 'number' ? detail.rawValue.toFixed(4) : String(detail.rawValue);
-    }
-    
+/**
+ * Creates a structured object for an OSC Shape parameter.
+ * @param {object} detail
+ * @returns {object}
+ */
+const buildTargetedOscShapeDetails = (detail) => {
     let currentShapeName = 'N/A';
     let currentIndex = -1;
-    
+
     if (Array.isArray(detail.enumOptions) && detail.rawValue !== undefined && detail.rawValue !== null) {
         currentIndex = Math.round(detail.rawValue);
         if (currentIndex >= 0 && currentIndex < detail.enumOptions.length) {
@@ -27,91 +34,103 @@ const printTargetedOscShapeDetails = (detail) => {
     } else {
         currentShapeName = detail.displayValue || 'N/A';
     }
-    
-    console.log(`\n*** TARGETED OSC SHAPE: ${detail.name} ***`);
-    
-    console.log(`Name: ${detail.name}`);
-    console.log(`    > ID: ${detail.id}`);
-    console.log(`    > Raw Value: ${rawValueStr}`);
-    console.log(`    > Display Value: ${detail.displayValue || 'N/A'}`);
-    
-    console.log(`    > Is Modifiable (is_enabled): ${detail.isEnabled ? 'Yes' : 'No'}`);
 
-    if (detail.enumOptions && detail.enumOptions.length > 0) {
-        console.log(`    > Possible Shapes (Enum Options):`);
-        detail.enumOptions.forEach((item, index) => {
-            console.log(`      [${index}]: ${item}`);
-        });
-        
-        if (currentIndex !== -1) {
-            console.log(`\n    > Current Shape is (Index ${currentIndex}): **${currentShapeName}**`);
-        } else {
-            console.log(`\n    > Current Shape is: **${currentShapeName}**`);
-        }
-    } else {
-        console.log(`    > Note: 'value_items' property (enum list) not available for this parameter.`);
-    }
-
-    console.log(`*** END TARGETED OUTPUT ***`);
-
-    console.log(`    ---------------------------------------`);
+    return {
+        id: detail.id,
+        name: detail.name,
+        isModifiable: detail.isEnabled,
+        rawValue: detail.rawValue,
+        displayValue: detail.displayValue,
+        possibleShapes: detail.enumOptions || [],
+        currentIndex: currentIndex,
+        currentShapeName: currentShapeName
+    };
 };
 
-const printStandardParameterDetails = (detail) => {
-    console.log(`Name: ${detail.name}`);
-    console.log(`    > ID: ${detail.id}`);
-
-    if (detail.isEnabled !== undefined) {
-        console.log(`    > Is Modifiable (is_enabled): ${detail.isEnabled ? 'Yes' : 'No'}`);
-    }
-
-    if (detail.rawValue !== undefined && detail.rawValue !== null) {
-        const rawValueStr = typeof detail.rawValue === 'number' ? detail.rawValue.toFixed(4) : String(detail.rawValue);
-        console.log(`    > Raw Value: ${rawValueStr}`);
-    }
-    
-    if (detail.displayValue !== undefined) {
-        console.log(`    > Current Display Value: ${detail.displayValue}`);
-    }
+/**
+ * Creates a structured object for a standard parameter.
+ * @param {object} detail
+ * @returns {object}
+ */
+const buildStandardParameterDetails = (detail) => {
+    const result = {
+        id: detail.id,
+        name: detail.name,
+        isModifiable: detail.isEnabled,
+        rawValue: detail.rawValue,
+        displayValue: detail.displayValue
+    };
 
     if (detail.enumOptions && detail.enumOptions.length > 0) {
-        console.log(`    > Enum Options: [${detail.enumOptions.join(', ')}]`);
-        if (detail.currentValueItem) {
-            console.log(`    > Current Value is: ${detail.currentValueItem}`);
-        }
+        result.enumOptions = detail.enumOptions;
+        result.currentValueItem = detail.currentValueItem;
     }
-    
-    console.log(`    ---------------------------------------`);
+
+    return result;
 };
 
-export const printTrackAndDeviceDetails = (trackDetails, deviceDetails) => {
+/**
+ * Main function to structure and print the output.
+ * @param {object} trackDetails
+ * @param {object} deviceDetails
+ * @returns {{track: object, device: object|null}} Structured data.
+ */
+export const processTrackAndDeviceDetails = (trackDetails, deviceDetails) => {
     
-    printTrackProperties(trackDetails);
+    //BUILD TRACK DATA ---
+    const trackData = buildTrackProperties(trackDetails);
+    //BUILD DEVICE DATA ---
+    let deviceData = null;
 
     if (deviceDetails) {
-        console.log(`\n--- FIRST DEVICE DETAILS ---`);
-        console.log(`Device Name: ${deviceDetails.name}`);
-        console.log(`Device Class: ${deviceDetails.class}`);
-        console.log(`Is Device Active: ${deviceDetails.isActive}`);
-        console.log(`Total Parameters: ${deviceDetails.allParameters.length}`);
         
-        if (deviceDetails.allParameters.length > 0) {
-            console.log(`\n--- ALL DEVICE PARAMETER FULL DETAILS & ENUMS (${deviceDetails.class}) ---`);
-            
-            const targetParameters = ['OSC1 Shape', 'OSC2 Shape', 'Osc 1 Shape', 'Osc 2 Shape'];
+        const allParametersData = [];
+        const targetParameters = ['OSC1 Shape', 'OSC2 Shape', 'Osc 1 Shape', 'Osc 2 Shape'];
 
-            for (const detail of deviceDetails.allParameters) {
-                
-                const isOscShape = targetParameters.includes(detail.name);
-                
-                if (isOscShape) {
-                    printTargetedOscShapeDetails(detail);
-                } else {
-                    printStandardParameterDetails(detail);
-                }
+        for (const detail of deviceDetails.allParameters) {
+            
+            const isOscShape = targetParameters.includes(detail.name);
+            
+            if (isOscShape) {
+                allParametersData.push(buildTargetedOscShapeDetails(detail));
+            } else {
+                allParametersData.push(buildStandardParameterDetails(detail));
             }
         }
+
+        deviceData = {
+            name: deviceDetails.name,
+            class: deviceDetails.class,
+            isActive: deviceDetails.isActive,
+            totalParameters: deviceDetails.allParameters.length,
+            parameters: allParametersData
+        };
+    }
+
+    console.log(`\n--- TRACK DETAILS (Index ${trackData.index}) ---`);
+    console.log(`Track Name: ${trackData.name}`);
+    console.log(`Track Type: ${trackData.type}`);
+    console.log(`Armed for Recording: ${trackData.isArmed}`);
+    console.log(`Muted: ${trackData.isMuted}`);
+    console.log(`Soloed: ${trackData.isSolo}`);
+    console.log(`Part of a Group: ${trackData.isGrouped}`);
+    console.log(`Volume (Raw Value): ${trackData.volume.toFixed(4)}`);
+    console.log(`Panning (Raw Value): ${trackData.panning.toFixed(4)}`);
+    
+    if (deviceData) {
+        console.log(`\n--- FIRST DEVICE DETAILS ---`);
+        console.log(`Device Name: ${deviceData.name}`);
+        console.log(`Device Class: ${deviceData.class}`);
+        console.log(`Is Device Active: ${deviceData.isActive}`);
+        console.log(`Total Parameters: ${deviceData.totalParameters}`);
+        console.log(`\n(Full parameter details included in the JSON output.)`);
     } else {
         console.log(`\nNo device found at index 0 on track: ${trackDetails.name}`);
     }
+    
+    // RETURN STRUCTURED DATA ---
+    return {
+        track: trackData,
+        device: deviceData
+    };
 };

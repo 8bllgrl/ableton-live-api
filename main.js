@@ -1,12 +1,27 @@
 import { AbletonLive } from 'ableton-live';
 import ws from 'ws';
-import { printTrackAndDeviceDetails } from './output.js';
+import { processTrackAndDeviceDetails } from './output.js'; 
+import fs from 'fs'; 
+import path from 'path';
 
 if (typeof global.WebSocket === 'undefined') {
     global.WebSocket = ws;
 }
 
 const live = new AbletonLive();
+
+const writeToJsonFile = (data) => {
+    const filename = 'track_device_details.json';
+    const filePath = path.join(process.cwd(), filename);
+    try {
+        const jsonString = JSON.stringify(data, null, 4); // null, 4 for nice formatting
+        fs.writeFileSync(filePath, jsonString);
+        console.log(`\n✅ Successfully wrote data to **${filename}** at ${filePath}`);
+    } catch (error) {
+        console.error(`\n❌ Error writing to JSON file ${filename}:`);
+        console.error(error);
+    }
+};
 
 /**
  * @returns {Promise<boolean>} Success status.
@@ -142,10 +157,9 @@ const getTrackDetailsAndFirstDevice = async () => {
         }
 
         const trackDetails = await getTrackDetails(track, 1); 
-        
         const deviceDetails = await getDeviceAndParameterDetails(firstDevice);
-        
-        printTrackAndDeviceDetails(trackDetails, deviceDetails);
+        const structuredData = processTrackAndDeviceDetails(trackDetails, deviceDetails);
+        writeToJsonFile(structuredData);
 
         console.log('✧･ﾟ: *✧･ﾟ:*═════════════*･ﾟ✧*:･ﾟ✧');
 

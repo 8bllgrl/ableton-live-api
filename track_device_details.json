@@ -1,0 +1,1725 @@
+{
+    "track": {
+        "index": 1,
+        "name": "2-80s VCO Brass",
+        "type": "midi",
+        "isArmed": true,
+        "isMuted": false,
+        "isSolo": false,
+        "isGrouped": false,
+        "volume": 0.8500000238418579,
+        "panning": 0
+    },
+    "device": {
+        "name": "80s VCO Brass",
+        "class": "Analog",
+        "isActive": true,
+        "totalParameters": 172,
+        "parameters": [
+            {
+                "id": "9",
+                "name": "Device On",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "10",
+                "name": "Voices",
+                "isModifiable": true,
+                "rawValue": 5,
+                "displayValue": 5,
+                "enumOptions": [
+                    "Mono",
+                    2,
+                    4,
+                    8,
+                    12,
+                    16,
+                    20,
+                    24,
+                    28,
+                    32
+                ],
+                "currentValueItem": 16
+            },
+            {
+                "id": "11",
+                "name": "PB Range",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 6
+            },
+            {
+                "id": "12",
+                "name": "Volume",
+                "isModifiable": true,
+                "rawValue": 0.4426840841770172,
+                "displayValue": -8
+            },
+            {
+                "id": "13",
+                "name": "Note PB Range",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "14",
+                "name": "Press Dest A",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "No Destination",
+                    "Vibrato Amount",
+                    "Vibrato Speed",
+                    "Unison Detune",
+                    "Noise Level",
+                    "Noise Balance",
+                    "Noise Color",
+                    "Osc 1 Pitch",
+                    "Osc 1 LFO 1 -> Pitch",
+                    "Osc 1 Pitch Env Depth",
+                    "Osc 1 Pulse Width",
+                    "Osc 1 LFO 1 -> Pulse Width",
+                    "Osc 1 Sub Level",
+                    "Osc 1 Sync Ratio",
+                    "Osc 1 Level",
+                    "Osc 1 Balance",
+                    "Filter 1 Cutoff",
+                    "Filter 1 LFO 1 -> Cutoff",
+                    "Filter 1 Env -> Cutoff",
+                    "Filter 1 Q",
+                    "Filter 1 LFO 1 -> Q",
+                    "Filter 1 Env -> Q",
+                    "Amp 1 Volume",
+                    "Amp 1 LFO 1 -> Volume",
+                    "Amp 1 Pan",
+                    "Amp 1 LFO 1 -> Pan",
+                    "LFO 1 Rate",
+                    "Osc 2 Pitch",
+                    "Osc 2 LFO 2 -> Pitch",
+                    "Osc 2 Pitch Env Depth",
+                    "Osc 2 Pulse Width",
+                    "Osc 2 LFO 2 -> Pulse Width",
+                    "Osc 2 Sub Level",
+                    "Osc 2 Sync Ratio",
+                    "Osc 2 Level",
+                    "Osc 2 Balance",
+                    "Filter 2 Cutoff",
+                    "Filter 2 LFO 2 -> Cutoff",
+                    "Filter 2 Env -> Cutoff",
+                    "Filter 2 Q",
+                    "Filter 2 LFO 2 -> Q",
+                    "Filter 2 Env -> Q",
+                    "Amp 2 Volume",
+                    "Amp 2 LFO 2 -> Volume",
+                    "Amp 2 Pan",
+                    "Amp 2 LFO 2 -> Pan",
+                    "LFO 2 Rate"
+                ],
+                "currentValueItem": "No Destination"
+            },
+            {
+                "id": "15",
+                "name": "Press Amt A",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 50
+            },
+            {
+                "id": "16",
+                "name": "Press Dest B",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "No Destination",
+                    "Vibrato Amount",
+                    "Vibrato Speed",
+                    "Unison Detune",
+                    "Noise Level",
+                    "Noise Balance",
+                    "Noise Color",
+                    "Osc 1 Pitch",
+                    "Osc 1 LFO 1 -> Pitch",
+                    "Osc 1 Pitch Env Depth",
+                    "Osc 1 Pulse Width",
+                    "Osc 1 LFO 1 -> Pulse Width",
+                    "Osc 1 Sub Level",
+                    "Osc 1 Sync Ratio",
+                    "Osc 1 Level",
+                    "Osc 1 Balance",
+                    "Filter 1 Cutoff",
+                    "Filter 1 LFO 1 -> Cutoff",
+                    "Filter 1 Env -> Cutoff",
+                    "Filter 1 Q",
+                    "Filter 1 LFO 1 -> Q",
+                    "Filter 1 Env -> Q",
+                    "Amp 1 Volume",
+                    "Amp 1 LFO 1 -> Volume",
+                    "Amp 1 Pan",
+                    "Amp 1 LFO 1 -> Pan",
+                    "LFO 1 Rate",
+                    "Osc 2 Pitch",
+                    "Osc 2 LFO 2 -> Pitch",
+                    "Osc 2 Pitch Env Depth",
+                    "Osc 2 Pulse Width",
+                    "Osc 2 LFO 2 -> Pulse Width",
+                    "Osc 2 Sub Level",
+                    "Osc 2 Sync Ratio",
+                    "Osc 2 Level",
+                    "Osc 2 Balance",
+                    "Filter 2 Cutoff",
+                    "Filter 2 LFO 2 -> Cutoff",
+                    "Filter 2 Env -> Cutoff",
+                    "Filter 2 Q",
+                    "Filter 2 LFO 2 -> Q",
+                    "Filter 2 Env -> Q",
+                    "Amp 2 Volume",
+                    "Amp 2 LFO 2 -> Volume",
+                    "Amp 2 Pan",
+                    "Amp 2 LFO 2 -> Pan",
+                    "LFO 2 Rate"
+                ],
+                "currentValueItem": "No Destination"
+            },
+            {
+                "id": "17",
+                "name": "Press Amt B",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 50
+            },
+            {
+                "id": "18",
+                "name": "Slide Dest A",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "No Destination",
+                    "Vibrato Amount",
+                    "Vibrato Speed",
+                    "Unison Detune",
+                    "Noise Level",
+                    "Noise Balance",
+                    "Noise Color",
+                    "Osc 1 Pitch",
+                    "Osc 1 LFO 1 -> Pitch",
+                    "Osc 1 Pitch Env Depth",
+                    "Osc 1 Pulse Width",
+                    "Osc 1 LFO 1 -> Pulse Width",
+                    "Osc 1 Sub Level",
+                    "Osc 1 Sync Ratio",
+                    "Osc 1 Level",
+                    "Osc 1 Balance",
+                    "Filter 1 Cutoff",
+                    "Filter 1 LFO 1 -> Cutoff",
+                    "Filter 1 Env -> Cutoff",
+                    "Filter 1 Q",
+                    "Filter 1 LFO 1 -> Q",
+                    "Filter 1 Env -> Q",
+                    "Amp 1 Volume",
+                    "Amp 1 LFO 1 -> Volume",
+                    "Amp 1 Pan",
+                    "Amp 1 LFO 1 -> Pan",
+                    "LFO 1 Rate",
+                    "Osc 2 Pitch",
+                    "Osc 2 LFO 2 -> Pitch",
+                    "Osc 2 Pitch Env Depth",
+                    "Osc 2 Pulse Width",
+                    "Osc 2 LFO 2 -> Pulse Width",
+                    "Osc 2 Sub Level",
+                    "Osc 2 Sync Ratio",
+                    "Osc 2 Level",
+                    "Osc 2 Balance",
+                    "Filter 2 Cutoff",
+                    "Filter 2 LFO 2 -> Cutoff",
+                    "Filter 2 Env -> Cutoff",
+                    "Filter 2 Q",
+                    "Filter 2 LFO 2 -> Q",
+                    "Filter 2 Env -> Q",
+                    "Amp 2 Volume",
+                    "Amp 2 LFO 2 -> Volume",
+                    "Amp 2 Pan",
+                    "Amp 2 LFO 2 -> Pan",
+                    "LFO 2 Rate"
+                ],
+                "currentValueItem": "No Destination"
+            },
+            {
+                "id": "19",
+                "name": "Slide Amt A",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 50
+            },
+            {
+                "id": "20",
+                "name": "Slide Dest B",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "No Destination",
+                    "Vibrato Amount",
+                    "Vibrato Speed",
+                    "Unison Detune",
+                    "Noise Level",
+                    "Noise Balance",
+                    "Noise Color",
+                    "Osc 1 Pitch",
+                    "Osc 1 LFO 1 -> Pitch",
+                    "Osc 1 Pitch Env Depth",
+                    "Osc 1 Pulse Width",
+                    "Osc 1 LFO 1 -> Pulse Width",
+                    "Osc 1 Sub Level",
+                    "Osc 1 Sync Ratio",
+                    "Osc 1 Level",
+                    "Osc 1 Balance",
+                    "Filter 1 Cutoff",
+                    "Filter 1 LFO 1 -> Cutoff",
+                    "Filter 1 Env -> Cutoff",
+                    "Filter 1 Q",
+                    "Filter 1 LFO 1 -> Q",
+                    "Filter 1 Env -> Q",
+                    "Amp 1 Volume",
+                    "Amp 1 LFO 1 -> Volume",
+                    "Amp 1 Pan",
+                    "Amp 1 LFO 1 -> Pan",
+                    "LFO 1 Rate",
+                    "Osc 2 Pitch",
+                    "Osc 2 LFO 2 -> Pitch",
+                    "Osc 2 Pitch Env Depth",
+                    "Osc 2 Pulse Width",
+                    "Osc 2 LFO 2 -> Pulse Width",
+                    "Osc 2 Sub Level",
+                    "Osc 2 Sync Ratio",
+                    "Osc 2 Level",
+                    "Osc 2 Balance",
+                    "Filter 2 Cutoff",
+                    "Filter 2 LFO 2 -> Cutoff",
+                    "Filter 2 Env -> Cutoff",
+                    "Filter 2 Q",
+                    "Filter 2 LFO 2 -> Q",
+                    "Filter 2 Env -> Q",
+                    "Amp 2 Volume",
+                    "Amp 2 LFO 2 -> Volume",
+                    "Amp 2 Pan",
+                    "Amp 2 LFO 2 -> Pan",
+                    "LFO 2 Rate"
+                ],
+                "currentValueItem": "No Destination"
+            },
+            {
+                "id": "21",
+                "name": "Slide Amt B",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 50
+            },
+            {
+                "id": "22",
+                "name": "Octave",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "23",
+                "name": "Semitone",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "24",
+                "name": "Detune",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 0
+            },
+            {
+                "id": "25",
+                "name": "Unison On/Off",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "26",
+                "name": "Unison Voices",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    2,
+                    4
+                ],
+                "currentValueItem": 2
+            },
+            {
+                "id": "27",
+                "name": "Unison Detune",
+                "isModifiable": true,
+                "rawValue": 0.0390625,
+                "displayValue": 4
+            },
+            {
+                "id": "28",
+                "name": "Unison Delay",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "29",
+                "name": "Key Priority",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "High",
+                    "Low",
+                    "Last"
+                ],
+                "currentValueItem": "Low"
+            },
+            {
+                "id": "30",
+                "name": "Key Stretch",
+                "isModifiable": true,
+                "rawValue": 0.7857142686843872,
+                "displayValue": 57
+            },
+            {
+                "id": "31",
+                "name": "Key Error",
+                "isModifiable": true,
+                "rawValue": 0.359375,
+                "displayValue": 36
+            },
+            {
+                "id": "32",
+                "name": "Vib On/Off",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "33",
+                "name": "Vib Speed",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 5.099999904632568
+            },
+            {
+                "id": "34",
+                "name": "Vib Fade-In",
+                "isModifiable": true,
+                "rawValue": 0.46875,
+                "displayValue": 0.4399999976158142
+            },
+            {
+                "id": "35",
+                "name": "Vib Amount",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "36",
+                "name": "Vib Error",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "37",
+                "name": "Vib Delay",
+                "isModifiable": true,
+                "rawValue": 0.3984375,
+                "displayValue": 0.3179999887943268
+            },
+            {
+                "id": "38",
+                "name": "Vib < ModWh",
+                "isModifiable": true,
+                "rawValue": 0.817460298538208,
+                "displayValue": 82
+            },
+            {
+                "id": "39",
+                "name": "Glide On/Off",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "40",
+                "name": "Glide Time",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 50
+            },
+            {
+                "id": "41",
+                "name": "Glide Mode",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Const",
+                    "Prop"
+                ],
+                "currentValueItem": "Prop"
+            },
+            {
+                "id": "42",
+                "name": "Glide Legato",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "43",
+                "name": "Noise On/Off",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "44",
+                "name": "Noise Color",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 682
+            },
+            {
+                "id": "45",
+                "name": "Noise Balance",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 50
+            },
+            {
+                "id": "46",
+                "name": "Noise Level",
+                "isModifiable": true,
+                "rawValue": 0.8062000274658203,
+                "displayValue": 0
+            },
+            {
+                "id": "47",
+                "name": "OSC1 On/Off",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "48",
+                "name": "OSC1 Shape",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "possibleShapes": [
+                    "Sine",
+                    "Saw",
+                    "Rect",
+                    "Noise"
+                ],
+                "currentIndex": 0,
+                "currentShapeName": "Sine"
+            },
+            {
+                "id": "49",
+                "name": "OSC1 Octave",
+                "isModifiable": true,
+                "rawValue": -1,
+                "displayValue": -1
+            },
+            {
+                "id": "50",
+                "name": "OSC1 Semi",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "51",
+                "name": "OSC1 Mode",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Sub",
+                    "Sync"
+                ],
+                "currentValueItem": "Sync"
+            },
+            {
+                "id": "52",
+                "name": "PEG1 Time",
+                "isModifiable": true,
+                "rawValue": 0.484375,
+                "displayValue": 48
+            },
+            {
+                "id": "53",
+                "name": "OSC1 Detune",
+                "isModifiable": true,
+                "rawValue": 0.5476190447807312,
+                "displayValue": 0
+            },
+            {
+                "id": "54",
+                "name": "O1 Keytrack",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 100
+            },
+            {
+                "id": "55",
+                "name": "OSC1 PW",
+                "isModifiable": true,
+                "rawValue": 0.3515625,
+                "displayValue": 35
+            },
+            {
+                "id": "56",
+                "name": "O1 Sub/Sync",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "57",
+                "name": "OSC1 Balance",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 100
+            },
+            {
+                "id": "58",
+                "name": "PEG1 Amount",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "59",
+                "name": "OSC1 < LFO",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "60",
+                "name": "O1 PW < LFO",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "61",
+                "name": "OSC1 Level",
+                "isModifiable": true,
+                "rawValue": 0.6640625,
+                "displayValue": -7
+            },
+            {
+                "id": "62",
+                "name": "F1 On/Off",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "63",
+                "name": "F1 Type",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Low-pass 12dB/oct",
+                    "Low-pass 24dB/oct",
+                    "Band-pass 6dB/oct",
+                    "Band-pass 12dB/oct",
+                    "Notch 2-pole",
+                    "Notch 4-pole",
+                    "High-pass 12dB/oct",
+                    "High-pass 24dB/oct",
+                    "Formant 6dB/oct",
+                    "Formant 12dB/oct"
+                ],
+                "currentValueItem": "Low-pass 24dB/oct"
+            },
+            {
+                "id": "64",
+                "name": "F1 Drive",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "Sym1",
+                    "Sym2",
+                    "Sym3",
+                    "Asym1",
+                    "Asym2",
+                    "Asym3"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "65",
+                "name": "F1 Freq < Key",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "66",
+                "name": "F1 Freq",
+                "isModifiable": true,
+                "rawValue": 0.420634925365448,
+                "displayValue": 492
+            },
+            {
+                "id": "67",
+                "name": "F1 Reso < Key",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "68",
+                "name": "F1 Resonance",
+                "isModifiable": true,
+                "rawValue": 0.2063492089509964,
+                "displayValue": 21
+            },
+            {
+                "id": "69",
+                "name": "F1 To F2",
+                "isModifiable": true,
+                "rawValue": 0.1484375,
+                "displayValue": 15
+            },
+            {
+                "id": "70",
+                "name": "F1 Freq < LFO",
+                "isModifiable": true,
+                "rawValue": 0.5714285969734192,
+                "displayValue": 1
+            },
+            {
+                "id": "71",
+                "name": "F1 Freq < Env",
+                "isModifiable": true,
+                "rawValue": 0.703125,
+                "displayValue": 4
+            },
+            {
+                "id": "72",
+                "name": "F1 Res < LFO",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "73",
+                "name": "F1 Res < Env",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "74",
+                "name": "FEG1 Exp",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "75",
+                "name": "FEG1 Loop",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "AD-R",
+                    "ADR-R",
+                    "ADS-AR"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "76",
+                "name": "FEG1 Free",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "77",
+                "name": "FEG1 Legato",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "78",
+                "name": "FEG1 A < Vel",
+                "isModifiable": true,
+                "rawValue": 0.15625,
+                "displayValue": 1
+            },
+            {
+                "id": "79",
+                "name": "FEG1 Attack",
+                "isModifiable": true,
+                "rawValue": 0.421875,
+                "displayValue": 0.15000000596046448
+            },
+            {
+                "id": "80",
+                "name": "FEG1 Decay",
+                "isModifiable": true,
+                "rawValue": 0.71875,
+                "displayValue": 1.6100000143051147
+            },
+            {
+                "id": "81",
+                "name": "FEG1 < Vel",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "82",
+                "name": "FEG1 Sustain",
+                "isModifiable": true,
+                "rawValue": 0.0234375,
+                "displayValue": 0
+            },
+            {
+                "id": "83",
+                "name": "FEG1 S Time",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1000
+            },
+            {
+                "id": "84",
+                "name": "FEG1 Rel",
+                "isModifiable": true,
+                "rawValue": 0.6000000238418579,
+                "displayValue": 0.6259999871253967
+            },
+            {
+                "id": "85",
+                "name": "AMP1 On/Off",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "86",
+                "name": "AMP1 < Key",
+                "isModifiable": true,
+                "rawValue": -0.375,
+                "displayValue": 0
+            },
+            {
+                "id": "87",
+                "name": "AMP1 Level",
+                "isModifiable": true,
+                "rawValue": 0.6746031641960144,
+                "displayValue": -8.800000190734863
+            },
+            {
+                "id": "88",
+                "name": "A1 Pan < Key",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "89",
+                "name": "AMP1 Pan",
+                "isModifiable": true,
+                "rawValue": 0.6190476417541504,
+                "displayValue": 12
+            },
+            {
+                "id": "90",
+                "name": "AMP1 < LFO",
+                "isModifiable": true,
+                "rawValue": 0.3125,
+                "displayValue": 0
+            },
+            {
+                "id": "91",
+                "name": "A1 Pan < LFO",
+                "isModifiable": true,
+                "rawValue": 0.6111111044883728,
+                "displayValue": 1
+            },
+            {
+                "id": "92",
+                "name": "A1 Pan < Env",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "93",
+                "name": "AEG1 Exp",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "94",
+                "name": "AEG1 Loop",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "AD-R",
+                    "ADR-R",
+                    "ADS-AR"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "95",
+                "name": "AEG1 Free",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "96",
+                "name": "AEG1 Legato",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "97",
+                "name": "AEG1 A < Vel",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "98",
+                "name": "AEG1 Attack",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0.004999999888241291
+            },
+            {
+                "id": "99",
+                "name": "AEG1 Decay",
+                "isModifiable": true,
+                "rawValue": 0.3671875,
+                "displayValue": 0.09700000286102295
+            },
+            {
+                "id": "100",
+                "name": "AEG1 < Vel",
+                "isModifiable": true,
+                "rawValue": 0.248046875,
+                "displayValue": 2
+            },
+            {
+                "id": "101",
+                "name": "AEG1 Sustain",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1
+            },
+            {
+                "id": "102",
+                "name": "AEG1 S Time",
+                "isModifiable": true,
+                "rawValue": 0.8571428656578064,
+                "displayValue": 271.1000061035156
+            },
+            {
+                "id": "103",
+                "name": "AEG1 Rel",
+                "isModifiable": true,
+                "rawValue": 0.265625,
+                "displayValue": 0.0430000014603138
+            },
+            {
+                "id": "104",
+                "name": "LFO1 On/Off",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "105",
+                "name": "LFO1 Shape",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Sine",
+                    "Tri",
+                    "Rect",
+                    "Noise1",
+                    "Noise2"
+                ],
+                "currentValueItem": "Sine"
+            },
+            {
+                "id": "106",
+                "name": "LFO1 SncRate",
+                "isModifiable": true,
+                "rawValue": 4,
+                "displayValue": 4
+            },
+            {
+                "id": "107",
+                "name": "LFO1 Sync",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Hertz",
+                    "Beat"
+                ],
+                "currentValueItem": "Beat"
+            },
+            {
+                "id": "108",
+                "name": "LFO1 Retrig",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "109",
+                "name": "LFO1 PW",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 50
+            },
+            {
+                "id": "110",
+                "name": "LFO1 Speed",
+                "isModifiable": true,
+                "rawValue": 0.3730158805847168,
+                "displayValue": 0.4000000059604645
+            },
+            {
+                "id": "111",
+                "name": "LFO1 Phase",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "112",
+                "name": "LFO1 Delay",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "113",
+                "name": "LFO1 Fade In",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "114",
+                "name": "OSC2 On/Off",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "115",
+                "name": "OSC2 Shape",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "possibleShapes": [
+                    "Sine",
+                    "Saw",
+                    "Rect",
+                    "Noise"
+                ],
+                "currentIndex": 1,
+                "currentShapeName": "Saw"
+            },
+            {
+                "id": "116",
+                "name": "OSC2 Octave",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "117",
+                "name": "OSC2 Semi",
+                "isModifiable": true,
+                "rawValue": -12,
+                "displayValue": -12
+            },
+            {
+                "id": "118",
+                "name": "OSC2 Mode",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Sub",
+                    "Sync"
+                ],
+                "currentValueItem": "Sub"
+            },
+            {
+                "id": "119",
+                "name": "PEG2 Time",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 50
+            },
+            {
+                "id": "120",
+                "name": "OSC2 Detune",
+                "isModifiable": true,
+                "rawValue": 0.4126984179019928,
+                "displayValue": 0
+            },
+            {
+                "id": "121",
+                "name": "O2 Keytrack",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 100
+            },
+            {
+                "id": "122",
+                "name": "OSC2 PW",
+                "isModifiable": true,
+                "rawValue": 0.3515625,
+                "displayValue": 35
+            },
+            {
+                "id": "123",
+                "name": "O2 Sub/Sync",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "124",
+                "name": "OSC2 Balance",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "125",
+                "name": "PEG2 Amount",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "126",
+                "name": "OSC2 < LFO",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "127",
+                "name": "O2 PW < LFO",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "128",
+                "name": "OSC2 Level",
+                "isModifiable": true,
+                "rawValue": 0.6328125,
+                "displayValue": -8.5
+            },
+            {
+                "id": "129",
+                "name": "F2 On/Off",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "130",
+                "name": "F2 Type",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Low-pass 12dB/oct",
+                    "Low-pass 24dB/oct",
+                    "Band-pass 6dB/oct",
+                    "Band-pass 12dB/oct",
+                    "Notch 2-pole",
+                    "Notch 4-pole",
+                    "High-pass 12dB/oct",
+                    "High-pass 24dB/oct",
+                    "Formant 6dB/oct",
+                    "Formant 12dB/oct"
+                ],
+                "currentValueItem": "Low-pass 24dB/oct"
+            },
+            {
+                "id": "131",
+                "name": "F2 Drive",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "Sym1",
+                    "Sym2",
+                    "Sym3",
+                    "Asym1",
+                    "Asym2",
+                    "Asym3"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "132",
+                "name": "F2 Freq < Key",
+                "isModifiable": true,
+                "rawValue": 0.1875,
+                "displayValue": 0
+            },
+            {
+                "id": "133",
+                "name": "F2 Freq",
+                "isModifiable": true,
+                "rawValue": 0.658730149269104,
+                "displayValue": 2357
+            },
+            {
+                "id": "134",
+                "name": "F2 Reso < Key",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "135",
+                "name": "F2 Resonance",
+                "isModifiable": true,
+                "rawValue": 0.296875,
+                "displayValue": 30
+            },
+            {
+                "id": "136",
+                "name": "F2 Slave",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "137",
+                "name": "F2 Freq < LFO",
+                "isModifiable": true,
+                "rawValue": 0.3046875,
+                "displayValue": 0
+            },
+            {
+                "id": "138",
+                "name": "F2 Freq < Env",
+                "isModifiable": true,
+                "rawValue": 0.796875,
+                "displayValue": 7
+            },
+            {
+                "id": "139",
+                "name": "F2 Res < LFO",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "140",
+                "name": "F2 Res < Env",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "141",
+                "name": "FEG2 Exp",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "142",
+                "name": "FEG2 Loop",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "AD-R",
+                    "ADR-R",
+                    "ADS-AR"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "143",
+                "name": "FEG2 Free",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "144",
+                "name": "FEG2 Legato",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "145",
+                "name": "FEG2 A < Vel",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "146",
+                "name": "FEG2 Attack",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0.004999999888241291
+            },
+            {
+                "id": "147",
+                "name": "FEG2 Decay",
+                "isModifiable": true,
+                "rawValue": 0.7734375,
+                "displayValue": 2.4800000190734863
+            },
+            {
+                "id": "148",
+                "name": "FEG2 < Vel",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "149",
+                "name": "FEG2 Sustain",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "150",
+                "name": "FEG2 S Time",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1000
+            },
+            {
+                "id": "151",
+                "name": "FEG2 Rel",
+                "isModifiable": true,
+                "rawValue": 0.359375,
+                "displayValue": 0.09099999815225601
+            },
+            {
+                "id": "152",
+                "name": "AMP2 On/Off",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "153",
+                "name": "AMP2 < Key",
+                "isModifiable": true,
+                "rawValue": -0.4375,
+                "displayValue": 0
+            },
+            {
+                "id": "154",
+                "name": "AMP2 Level",
+                "isModifiable": true,
+                "rawValue": 0.738095223903656,
+                "displayValue": -5.900000095367432
+            },
+            {
+                "id": "155",
+                "name": "A2 Pan < Key",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "156",
+                "name": "AMP2 Pan",
+                "isModifiable": true,
+                "rawValue": 0.3333333432674408,
+                "displayValue": -17
+            },
+            {
+                "id": "157",
+                "name": "AMP2 < LFO",
+                "isModifiable": true,
+                "rawValue": 0.40625,
+                "displayValue": 0
+            },
+            {
+                "id": "158",
+                "name": "A2 Pan < LFO",
+                "isModifiable": true,
+                "rawValue": 0.6746031641960144,
+                "displayValue": 1
+            },
+            {
+                "id": "159",
+                "name": "A2 Pan < Env",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "160",
+                "name": "AEG2 Exp",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "161",
+                "name": "AEG2 Loop",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "AD-R",
+                    "ADR-R",
+                    "ADS-AR"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "162",
+                "name": "AEG2 Free",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "163",
+                "name": "AEG2 Legato",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "Off"
+            },
+            {
+                "id": "164",
+                "name": "AEG2 A < Vel",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "165",
+                "name": "AEG2 Attack",
+                "isModifiable": true,
+                "rawValue": 0.109375,
+                "displayValue": 0.012000000104308128
+            },
+            {
+                "id": "166",
+                "name": "AEG2 Decay",
+                "isModifiable": true,
+                "rawValue": 0.3671875,
+                "displayValue": 0.09700000286102295
+            },
+            {
+                "id": "167",
+                "name": "AEG2 < Vel",
+                "isModifiable": true,
+                "rawValue": 0.248046875,
+                "displayValue": 2
+            },
+            {
+                "id": "168",
+                "name": "AEG2 Sustain",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1
+            },
+            {
+                "id": "169",
+                "name": "AEG2 S Time",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1000
+            },
+            {
+                "id": "170",
+                "name": "AEG2 Rel",
+                "isModifiable": true,
+                "rawValue": 0.2578125,
+                "displayValue": 0.03999999910593033
+            },
+            {
+                "id": "171",
+                "name": "LFO2 On/Off",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "172",
+                "name": "LFO2 Shape",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0,
+                "enumOptions": [
+                    "Sine",
+                    "Tri",
+                    "Rect",
+                    "Noise1",
+                    "Noise2"
+                ],
+                "currentValueItem": "Sine"
+            },
+            {
+                "id": "173",
+                "name": "LFO2 SncRate",
+                "isModifiable": true,
+                "rawValue": 3,
+                "displayValue": 3
+            },
+            {
+                "id": "174",
+                "name": "LFO2 Sync",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Hertz",
+                    "Beat"
+                ],
+                "currentValueItem": "Beat"
+            },
+            {
+                "id": "175",
+                "name": "LFO2 Retrig",
+                "isModifiable": true,
+                "rawValue": 1,
+                "displayValue": 1,
+                "enumOptions": [
+                    "Off",
+                    "On"
+                ],
+                "currentValueItem": "On"
+            },
+            {
+                "id": "176",
+                "name": "LFO2 PW",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 50
+            },
+            {
+                "id": "177",
+                "name": "LFO2 Speed",
+                "isModifiable": true,
+                "rawValue": 0.5,
+                "displayValue": 0.8999999761581421
+            },
+            {
+                "id": "178",
+                "name": "LFO2 Phase",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "179",
+                "name": "LFO2 Delay",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            },
+            {
+                "id": "180",
+                "name": "LFO2 Fade In",
+                "isModifiable": true,
+                "rawValue": 0,
+                "displayValue": 0
+            }
+        ]
+    }
+}
