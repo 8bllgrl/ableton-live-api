@@ -8,111 +8,149 @@ if (typeof global.WebSocket === 'undefined') {
 
 const live = new AbletonLive();
 
-const getTrackDetailsAndFirstDevice = async () => {
-    let cleanup = false;
+/**
+ * @returns {Promise<boolean>} Success status.
+ */
+const connectToLive = async () => {
     try {
         console.log('Connecting to Ableton Live...');
         await live.connect();
-        cleanup = true;
-        
         console.log('════════════════════════════════');
         console.log('Successfully connected to Ableton Live.');
         console.log('════════════════════════════════');
-        console.log('✧･ﾟ: *✧･ﾟ:* Fetching Track Details *･ﾟ✧*:･ﾟ✧');
+        return true;
+    } catch (error) {
+        console.error('\nAn error occurred during connection. Double-check that LiveAPI.amxd is loaded on a track and Ableton Live is running.');
+        console.error(error);
+        return false;
+    }
+};
 
-        const tracks = await live.song.children('tracks');
-        if (tracks.length < 2) {
-            console.log("Not enough tracks found. This script requires at least two tracks.");
+/**
+ * @returns {Promise<{track: object|null, firstDevice: object|null}>} Objects.
+ */
+const getTargetObjects = async () => {
+    console.log('✧･ﾟ: *✧･ﾟ:* Fetching Track and Device Objects *･ﾟ✧*:･ﾟ✧');
+
+    const tracks = await live.song.children('tracks');
+    if (tracks.length < 2) {
+        console.log("Not enough tracks found. This script requires at least two tracks (index 1).");
+        return { track: null, firstDevice: null };
+    }
+
+    const trackIndex = 1;
+    const track = tracks[trackIndex];
+    const firstDevice = await track.child('devices', 0);
+    
+    return { track, firstDevice };
+};
+
+
+/**
+ * @param {object} track
+ * @param {number} index
+ * @returns {Promise<object>} Track details.
+ */
+const getTrackDetails = async (track, index) => {
+    const trackName = await track.name;
+    const trackType = await track.type;
+    const isArmed = await track.get('arm');
+    const isMuted = await track.get('mute');
+    const isSolo = await track.get('solo');
+    const isGrouped = await track.get('is_grouped');
+    
+    const volumeParam = await track.volume();
+    const panningParam = await track.panning();
+    const volume = await volumeParam.get('value');
+    const panning = await panningParam.get('value');
+
+    return {
+        index: index,
+        name: trackName,
+        type: trackType,
+        isArmed,
+        isMuted,
+        isSolo,
+        isGrouped,
+        volume: volume,
+        panning: panning
+    };
+};
+
+/**
+ * @param {object} firstDevice
+ * @returns {Promise<object|null>} Device/Parameter details.
+ */
+const getDeviceAndParameterDetails = async (firstDevice) => {
+    if (!firstDevice) {
+        return null;
+    }
+
+    const deviceName = firstDevice.name;
+    const deviceClass = firstDevice.classDisplayName; 
+    const isActive = await firstDevice.get('is_active');
+
+    const parameters = await firstDevice.children('parameters');
+    const finalParameterDetails = [];
+
+    for (const param of parameters) {
+        const name = await param.get('name');
+        const id = param.id;
+        const value = await param.get('value');
+        const displayValue = await param.get('display_value'); 
+        const valueItems = await param.get('value_items'); 
+        const isEnabled = await param.get('is_enabled');
+
+        let currentValueItem = null;
+        if (valueItems && valueItems.length > 0 && typeof value === 'number') {
+            const currentIndex = Math.round(value);
+            if (currentIndex >= 0 && currentIndex < valueItems.length) {
+                 currentValueItem = valueItems[currentIndex];
+            }
+        }
+        
+        finalParameterDetails.push({
+            id: id, 
+            name: name,
+            rawValue: value,
+            displayValue,
+            enumOptions: valueItems,
+            currentValueItem,
+            isEnabled
+        });
+    }
+    
+    return {
+        name: deviceName,
+        class: deviceClass,
+        isActive: isActive,
+        allParameters: finalParameterDetails 
+    };
+};
+
+const getTrackDetailsAndFirstDevice = async () => {
+    let cleanup = false;
+    try {
+        if (!await connectToLive()) {
+            return; 
+        }
+        cleanup = true;
+
+        const { track, firstDevice } = await getTargetObjects();
+        if (!track) {
             return;
         }
 
-        const trackIndex = 1;
-        const track = tracks[trackIndex];
+        const trackDetails = await getTrackDetails(track, 1); 
         
-        const trackName = await track.name;
-        const trackType = await track.type;
-        const isArmed = await track.get('arm');
-        const isMuted = await track.get('mute');
-        const isSolo = await track.get('solo');
-        const isGrouped = await track.get('is_grouped');
-        
-        const volumeParam = await track.volume();
-        const panningParam = await track.panning();
-        const volume = await volumeParam.get('value');
-        const panning = await panningParam.get('value');
-
-        const trackDetails = {
-            index: trackIndex,
-            name: trackName,
-            type: trackType,
-            isArmed,
-            isMuted,
-            isSolo,
-            isGrouped,
-            volume: volume,
-            panning: panning
-        };
-
-        let deviceDetails = null;
-        const firstDevice = await track.child('devices', 0);
-        
-        if (firstDevice) {
-            const deviceName = firstDevice.name;
-            const deviceClass = firstDevice.classDisplayName; 
-            const isActive = await firstDevice.get('is_active');
-
-            const parameters = await firstDevice.children('parameters');
-            let allParametersWithParamObject = [];
-
-            for (const param of parameters) {
-                const name = await param.get('name');
-                const id = param.id;
-                allParametersWithParamObject.push({ name, id, param });
-            }
-            
-            const finalParameterDetails = [];
-
-            for (const detail of allParametersWithParamObject) {
-                
-                const baseDetail = { id: detail.id, name: detail.name };
-
-                const value = await detail.param.get('value');
-                const displayValue = await detail.param.get('display_value'); 
-                const valueItems = await detail.param.get('value_items'); 
-                const isEnabled = await detail.param.get('is_enabled');
-
-                let currentValueItem = null;
-                if (valueItems && valueItems.length > 0 && typeof value === 'number') {
-                    const currentIndex = Math.round(value);
-                    if (currentIndex >= 0 && currentIndex < valueItems.length) {
-                         currentValueItem = valueItems[currentIndex];
-                    }
-                }
-                
-                finalParameterDetails.push({
-                    ...baseDetail,
-                    rawValue: value,
-                    displayValue,
-                    enumOptions: valueItems,
-                    currentValueItem,
-                    isEnabled
-                });
-            }
-            
-            deviceDetails = {
-                name: deviceName,
-                class: deviceClass,
-                isActive: isActive,
-                allParameters: finalParameterDetails 
-            };
-        }
+        const deviceDetails = await getDeviceAndParameterDetails(firstDevice);
         
         printTrackAndDeviceDetails(trackDetails, deviceDetails);
 
-
         console.log('✧･ﾟ: *✧･ﾟ:*═════════════*･ﾟ✧*:･ﾟ✧');
+
     } catch (error) {
-        console.error('\nAn error occurred. Double-check that LiveAPI.amxd is loaded on a track and Ableton Live is running.');
+        console.error('\nAn unexpected error occurred:');
         console.error(error);
     } finally {
         if (cleanup && live.isConnected) {

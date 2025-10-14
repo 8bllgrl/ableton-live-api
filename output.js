@@ -1,5 +1,4 @@
-export const printTrackAndDeviceDetails = (trackDetails, deviceDetails) => {
-    
+const printTrackProperties = (trackDetails) => {
     console.log(`\n--- TRACK DETAILS (Index ${trackDetails.index}) ---`);
     console.log(`Track Name: ${trackDetails.name}`);
     console.log(`Track Type: ${trackDetails.type}`);
@@ -9,6 +8,85 @@ export const printTrackAndDeviceDetails = (trackDetails, deviceDetails) => {
     console.log(`Part of a Group: ${trackDetails.isGrouped}`);
     console.log(`Volume (Raw Value): ${trackDetails.volume.toFixed(4)}`);
     console.log(`Panning (Raw Value): ${trackDetails.panning.toFixed(4)}`);
+};
+
+const printTargetedOscShapeDetails = (detail) => {
+    let rawValueStr = 'N/A';
+    if (detail.rawValue !== undefined && detail.rawValue !== null) {
+        rawValueStr = typeof detail.rawValue === 'number' ? detail.rawValue.toFixed(4) : String(detail.rawValue);
+    }
+    
+    let currentShapeName = 'N/A';
+    let currentIndex = -1;
+    
+    if (Array.isArray(detail.enumOptions) && detail.rawValue !== undefined && detail.rawValue !== null) {
+        currentIndex = Math.round(detail.rawValue);
+        if (currentIndex >= 0 && currentIndex < detail.enumOptions.length) {
+            currentShapeName = detail.enumOptions[currentIndex];
+        }
+    } else {
+        currentShapeName = detail.displayValue || 'N/A';
+    }
+    
+    console.log(`\n*** TARGETED OSC SHAPE: ${detail.name} ***`);
+    
+    console.log(`Name: ${detail.name}`);
+    console.log(`    > ID: ${detail.id}`);
+    console.log(`    > Raw Value: ${rawValueStr}`);
+    console.log(`    > Display Value: ${detail.displayValue || 'N/A'}`);
+    
+    console.log(`    > Is Modifiable (is_enabled): ${detail.isEnabled ? 'Yes' : 'No'}`);
+
+    if (detail.enumOptions && detail.enumOptions.length > 0) {
+        console.log(`    > Possible Shapes (Enum Options):`);
+        detail.enumOptions.forEach((item, index) => {
+            console.log(`      [${index}]: ${item}`);
+        });
+        
+        if (currentIndex !== -1) {
+            console.log(`\n    > Current Shape is (Index ${currentIndex}): **${currentShapeName}**`);
+        } else {
+            console.log(`\n    > Current Shape is: **${currentShapeName}**`);
+        }
+    } else {
+        console.log(`    > Note: 'value_items' property (enum list) not available for this parameter.`);
+    }
+
+    console.log(`*** END TARGETED OUTPUT ***`);
+
+    console.log(`    ---------------------------------------`);
+};
+
+const printStandardParameterDetails = (detail) => {
+    console.log(`Name: ${detail.name}`);
+    console.log(`    > ID: ${detail.id}`);
+
+    if (detail.isEnabled !== undefined) {
+        console.log(`    > Is Modifiable (is_enabled): ${detail.isEnabled ? 'Yes' : 'No'}`);
+    }
+
+    if (detail.rawValue !== undefined && detail.rawValue !== null) {
+        const rawValueStr = typeof detail.rawValue === 'number' ? detail.rawValue.toFixed(4) : String(detail.rawValue);
+        console.log(`    > Raw Value: ${rawValueStr}`);
+    }
+    
+    if (detail.displayValue !== undefined) {
+        console.log(`    > Current Display Value: ${detail.displayValue}`);
+    }
+
+    if (detail.enumOptions && detail.enumOptions.length > 0) {
+        console.log(`    > Enum Options: [${detail.enumOptions.join(', ')}]`);
+        if (detail.currentValueItem) {
+            console.log(`    > Current Value is: ${detail.currentValueItem}`);
+        }
+    }
+    
+    console.log(`    ---------------------------------------`);
+};
+
+export const printTrackAndDeviceDetails = (trackDetails, deviceDetails) => {
+    
+    printTrackProperties(trackDetails);
 
     if (deviceDetails) {
         console.log(`\n--- FIRST DEVICE DETAILS ---`);
@@ -27,77 +105,10 @@ export const printTrackAndDeviceDetails = (trackDetails, deviceDetails) => {
                 const isOscShape = targetParameters.includes(detail.name);
                 
                 if (isOscShape) {
-                    let rawValueStr = 'N/A';
-                    if (detail.rawValue !== undefined && detail.rawValue !== null) {
-                        rawValueStr = typeof detail.rawValue === 'number' ? detail.rawValue.toFixed(4) : String(detail.rawValue);
-                    }
-                    
-                    let currentShapeName = 'N/A';
-                    let currentIndex = -1;
-                    
-                    if (Array.isArray(detail.enumOptions) && detail.rawValue !== undefined && detail.rawValue !== null) {
-                        currentIndex = Math.round(detail.rawValue);
-                        if (currentIndex >= 0 && currentIndex < detail.enumOptions.length) {
-                            currentShapeName = detail.enumOptions[currentIndex];
-                        }
-                    } else {
-                        currentShapeName = detail.displayValue || 'N/A';
-                    }
-                    
-                    console.log(`\n*** TARGETED OSC SHAPE: ${detail.name} ***`);
-                    
-                    console.log(`Name: ${detail.name}`);
-                    console.log(`    > ID: ${detail.id}`);
-                    console.log(`    > Raw Value: ${rawValueStr}`);
-                    console.log(`    > Display Value: ${detail.displayValue || 'N/A'}`);
-                    
-                    console.log(`    > Is Modifiable (is_enabled): ${detail.isEnabled ? 'Yes' : 'No'}`);
-
-                    if (detail.enumOptions && detail.enumOptions.length > 0) {
-                        console.log(`    > Possible Shapes (Enum Options):`);
-                        detail.enumOptions.forEach((item, index) => {
-                            console.log(`      [${index}]: ${item}`);
-                        });
-                        
-                        if (currentIndex !== -1) {
-                            console.log(`\n    > Current Shape is (Index ${currentIndex}): **${currentShapeName}**`);
-                        } else {
-                            console.log(`\n    > Current Shape is: **${currentShapeName}**`);
-                        }
-                    } else {
-                        console.log(`    > Note: 'value_items' property (enum list) not available for this parameter.`);
-                    }
-
-                    console.log(`*** END TARGETED OUTPUT ***`);
-
-                    console.log(`    ---------------------------------------`);
-                    continue; 
+                    printTargetedOscShapeDetails(detail);
+                } else {
+                    printStandardParameterDetails(detail);
                 }
-                
-                console.log(`Name: ${detail.name}`);
-                console.log(`    > ID: ${detail.id}`);
-
-                if (detail.isEnabled !== undefined) {
-                    console.log(`    > Is Modifiable (is_enabled): ${detail.isEnabled ? 'Yes' : 'No'}`);
-                }
-
-                if (detail.rawValue !== undefined && detail.rawValue !== null) {
-                    const rawValueStr = typeof detail.rawValue === 'number' ? detail.rawValue.toFixed(4) : String(detail.rawValue);
-                    console.log(`    > Raw Value: ${rawValueStr}`);
-                }
-                
-                if (detail.displayValue !== undefined) {
-                    console.log(`    > Current Display Value: ${detail.displayValue}`);
-                }
-
-                if (detail.enumOptions && detail.enumOptions.length > 0) {
-                    console.log(`    > Enum Options: [${detail.enumOptions.join(', ')}]`);
-                    if (detail.currentValueItem) {
-                        console.log(`    > Current Value is: ${detail.currentValueItem}`);
-                    }
-                }
-                
-                console.log(`    ---------------------------------------`);
             }
         }
     } else {
