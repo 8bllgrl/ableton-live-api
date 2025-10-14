@@ -15,184 +15,184 @@
         "class": "Analog",
         "isActive": true,
         "totalParameters": 172,
-        "onOffSwitches": [
-            {
+        "onOffSwitches": {
+            "device_on": {
                 "id": "9",
                 "name": "Device On",
                 "status": "On",
                 "rawValue": 1
             },
-            {
+            "unison_on_off": {
                 "id": "25",
                 "name": "Unison On/Off",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "vib_on_off": {
                 "id": "32",
                 "name": "Vib On/Off",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "glide_on_off": {
                 "id": "39",
                 "name": "Glide On/Off",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "glide_legato": {
                 "id": "42",
                 "name": "Glide Legato",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "noise_on_off": {
                 "id": "43",
                 "name": "Noise On/Off",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "o_s_c1_on_off": {
                 "id": "47",
                 "name": "OSC1 On/Off",
                 "status": "On",
                 "rawValue": 1
             },
-            {
+            "f1_on_off": {
                 "id": "62",
                 "name": "F1 On/Off",
                 "status": "On",
                 "rawValue": 1
             },
-            {
+            "f_e_g1_exp": {
                 "id": "74",
                 "name": "FEG1 Exp",
                 "status": "On",
                 "rawValue": 1
             },
-            {
+            "f_e_g1_free": {
                 "id": "76",
                 "name": "FEG1 Free",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "f_e_g1_legato": {
                 "id": "77",
                 "name": "FEG1 Legato",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "a_m_p1_on_off": {
                 "id": "85",
                 "name": "AMP1 On/Off",
                 "status": "On",
                 "rawValue": 1
             },
-            {
+            "a_e_g1_exp": {
                 "id": "93",
                 "name": "AEG1 Exp",
                 "status": "On",
                 "rawValue": 1
             },
-            {
+            "a_e_g1_free": {
                 "id": "95",
                 "name": "AEG1 Free",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "a_e_g1_legato": {
                 "id": "96",
                 "name": "AEG1 Legato",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "l_f_o1_on_off": {
                 "id": "104",
                 "name": "LFO1 On/Off",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "l_f_o1_retrig": {
                 "id": "108",
                 "name": "LFO1 Retrig",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "o_s_c2_on_off": {
                 "id": "114",
                 "name": "OSC2 On/Off",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "f2_on_off": {
                 "id": "129",
                 "name": "F2 On/Off",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "f2_slave": {
                 "id": "136",
                 "name": "F2 Slave",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "f_e_g2_exp": {
                 "id": "141",
                 "name": "FEG2 Exp",
                 "status": "On",
                 "rawValue": 1
             },
-            {
+            "f_e_g2_free": {
                 "id": "143",
                 "name": "FEG2 Free",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "f_e_g2_legato": {
                 "id": "144",
                 "name": "FEG2 Legato",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "a_m_p2_on_off": {
                 "id": "152",
                 "name": "AMP2 On/Off",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "a_e_g2_exp": {
                 "id": "160",
                 "name": "AEG2 Exp",
                 "status": "On",
                 "rawValue": 1
             },
-            {
+            "a_e_g2_free": {
                 "id": "162",
                 "name": "AEG2 Free",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "a_e_g2_legato": {
                 "id": "163",
                 "name": "AEG2 Legato",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "l_f_o2_on_off": {
                 "id": "171",
                 "name": "LFO2 On/Off",
                 "status": "Off",
                 "rawValue": 0
             },
-            {
+            "l_f_o2_retrig": {
                 "id": "175",
                 "name": "LFO2 Retrig",
                 "status": "Off",
                 "rawValue": 0
             }
-        ],
-        "parameters": [
-            {
+        },
+        "parameters": {
+            "voices": {
                 "id": "10",
                 "name": "Voices",
                 "isModifiable": true,
@@ -212,28 +212,28 @@
                 ],
                 "currentValueItem": 8
             },
-            {
+            "p_b_range": {
                 "id": "11",
                 "name": "PB Range",
                 "isModifiable": true,
                 "rawValue": 0.1666666716337204,
                 "displayValue": 2
             },
-            {
+            "volume": {
                 "id": "12",
                 "name": "Volume",
                 "isModifiable": true,
                 "rawValue": 0.7047889828681946,
                 "displayValue": 0
             },
-            {
+            "note_p_b_range": {
                 "id": "13",
                 "name": "Note PB Range",
                 "isModifiable": true,
                 "rawValue": 48,
                 "displayValue": 48
             },
-            {
+            "press_dest_a": {
                 "id": "14",
                 "name": "Press Dest A",
                 "isModifiable": true,
@@ -290,14 +290,14 @@
                 ],
                 "currentValueItem": "No Destination"
             },
-            {
+            "press_amt_a": {
                 "id": "15",
                 "name": "Press Amt A",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 50
             },
-            {
+            "press_dest_b": {
                 "id": "16",
                 "name": "Press Dest B",
                 "isModifiable": true,
@@ -354,14 +354,14 @@
                 ],
                 "currentValueItem": "No Destination"
             },
-            {
+            "press_amt_b": {
                 "id": "17",
                 "name": "Press Amt B",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 50
             },
-            {
+            "slide_dest_a": {
                 "id": "18",
                 "name": "Slide Dest A",
                 "isModifiable": true,
@@ -418,14 +418,14 @@
                 ],
                 "currentValueItem": "No Destination"
             },
-            {
+            "slide_amt_a": {
                 "id": "19",
                 "name": "Slide Amt A",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 50
             },
-            {
+            "slide_dest_b": {
                 "id": "20",
                 "name": "Slide Dest B",
                 "isModifiable": true,
@@ -482,35 +482,35 @@
                 ],
                 "currentValueItem": "No Destination"
             },
-            {
+            "slide_amt_b": {
                 "id": "21",
                 "name": "Slide Amt B",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 50
             },
-            {
+            "octave": {
                 "id": "22",
                 "name": "Octave",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "semitone": {
                 "id": "23",
                 "name": "Semitone",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "detune": {
                 "id": "24",
                 "name": "Detune",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 0
             },
-            {
+            "key_priority": {
                 "id": "29",
                 "name": "Key Priority",
                 "isModifiable": true,
@@ -523,21 +523,21 @@
                 ],
                 "currentValueItem": "Last"
             },
-            {
+            "key_stretch": {
                 "id": "30",
                 "name": "Key Stretch",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 0
             },
-            {
+            "key_error": {
                 "id": "31",
                 "name": "Key Error",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "o_s_c1_shape": {
                 "id": "48",
                 "name": "OSC1 Shape",
                 "isModifiable": true,
@@ -552,21 +552,21 @@
                 "currentIndex": 1,
                 "currentShapeName": "Saw"
             },
-            {
+            "o_s_c1_octave": {
                 "id": "49",
                 "name": "OSC1 Octave",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "o_s_c1_semi": {
                 "id": "50",
                 "name": "OSC1 Semi",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "o_s_c1_mode": {
                 "id": "51",
                 "name": "OSC1 Mode",
                 "isModifiable": true,
@@ -578,77 +578,77 @@
                 ],
                 "currentValueItem": "Sub"
             },
-            {
+            "p_e_g1_time": {
                 "id": "52",
                 "name": "PEG1 Time",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 50
             },
-            {
+            "o_s_c1_detune": {
                 "id": "53",
                 "name": "OSC1 Detune",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 0
             },
-            {
+            "o1_keytrack": {
                 "id": "54",
                 "name": "O1 Keytrack",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 100
             },
-            {
+            "o_s_c1_p_w": {
                 "id": "55",
                 "name": "OSC1 PW",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 50
             },
-            {
+            "o1_sub_sync": {
                 "id": "56",
                 "name": "O1 Sub/Sync",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "o_s_c1_balance": {
                 "id": "57",
                 "name": "OSC1 Balance",
                 "isModifiable": true,
                 "rawValue": 1,
                 "displayValue": 100
             },
-            {
+            "p_e_g1_amount": {
                 "id": "58",
                 "name": "PEG1 Amount",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "o_s_c1_<_l_f_o": {
                 "id": "59",
                 "name": "OSC1 < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "o1_p_w_<_l_f_o": {
                 "id": "60",
                 "name": "O1 PW < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "o_s_c1_level": {
                 "id": "61",
                 "name": "OSC1 Level",
                 "isModifiable": true,
                 "rawValue": 0.8062000274658203,
                 "displayValue": 0
             },
-            {
+            "f1_type": {
                 "id": "63",
                 "name": "F1 Type",
                 "isModifiable": true,
@@ -668,7 +668,7 @@
                 ],
                 "currentValueItem": "Low-pass 24dB/oct"
             },
-            {
+            "f1_drive": {
                 "id": "64",
                 "name": "F1 Drive",
                 "isModifiable": true,
@@ -685,70 +685,70 @@
                 ],
                 "currentValueItem": "Sym1"
             },
-            {
+            "f1_freq_<_key": {
                 "id": "65",
                 "name": "F1 Freq < Key",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "f1_freq": {
                 "id": "66",
                 "name": "F1 Freq",
                 "isModifiable": true,
                 "rawValue": 1,
                 "displayValue": 22000
             },
-            {
+            "f1_reso_<_key": {
                 "id": "67",
                 "name": "F1 Reso < Key",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "f1_resonance": {
                 "id": "68",
                 "name": "F1 Resonance",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "f1_to_f2": {
                 "id": "69",
                 "name": "F1 To F2",
                 "isModifiable": true,
                 "rawValue": 1,
                 "displayValue": 100
             },
-            {
+            "f1_freq_<_l_f_o": {
                 "id": "70",
                 "name": "F1 Freq < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "f1_freq_<_env": {
                 "id": "71",
                 "name": "F1 Freq < Env",
                 "isModifiable": true,
                 "rawValue": 0.7047610878944397,
                 "displayValue": 4
             },
-            {
+            "f1_res_<_l_f_o": {
                 "id": "72",
                 "name": "F1 Res < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "f1_res_<_env": {
                 "id": "73",
                 "name": "F1 Res < Env",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "f_e_g1_loop": {
                 "id": "75",
                 "name": "FEG1 Loop",
                 "isModifiable": true,
@@ -762,105 +762,105 @@
                 ],
                 "currentValueItem": "Off"
             },
-            {
+            "f_e_g1_a_<_vel": {
                 "id": "78",
                 "name": "FEG1 A < Vel",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "f_e_g1_attack": {
                 "id": "79",
                 "name": "FEG1 Attack",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0.004999999888241291
             },
-            {
+            "f_e_g1_decay": {
                 "id": "80",
                 "name": "FEG1 Decay",
                 "isModifiable": true,
                 "rawValue": 0.6000000238418579,
                 "displayValue": 0.6259999871253967
             },
-            {
+            "f_e_g1_<_vel": {
                 "id": "81",
                 "name": "FEG1 < Vel",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "f_e_g1_sustain": {
                 "id": "82",
                 "name": "FEG1 Sustain",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 0
             },
-            {
+            "f_e_g1_s_time": {
                 "id": "83",
                 "name": "FEG1 S Time",
                 "isModifiable": true,
                 "rawValue": 1,
                 "displayValue": 1000
             },
-            {
+            "f_e_g1_rel": {
                 "id": "84",
                 "name": "FEG1 Rel",
                 "isModifiable": true,
                 "rawValue": 0.4847841262817383,
                 "displayValue": 0.25
             },
-            {
+            "a_m_p1_<_key": {
                 "id": "86",
                 "name": "AMP1 < Key",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "a_m_p1_level": {
                 "id": "87",
                 "name": "AMP1 Level",
                 "isModifiable": true,
                 "rawValue": 0.4743117690086365,
                 "displayValue": -18
             },
-            {
+            "a1_pan_<_key": {
                 "id": "88",
                 "name": "A1 Pan < Key",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "a_m_p1_pan": {
                 "id": "89",
                 "name": "AMP1 Pan",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 0
             },
-            {
+            "a_m_p1_<_l_f_o": {
                 "id": "90",
                 "name": "AMP1 < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "a1_pan_<_l_f_o": {
                 "id": "91",
                 "name": "A1 Pan < LFO",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "a1_pan_<_env": {
                 "id": "92",
                 "name": "A1 Pan < Env",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "a_e_g1_loop": {
                 "id": "94",
                 "name": "AEG1 Loop",
                 "isModifiable": true,
@@ -874,55 +874,55 @@
                 ],
                 "currentValueItem": "Off"
             },
-            {
+            "a_e_g1_a_<_vel": {
                 "id": "97",
                 "name": "AEG1 A < Vel",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0
             },
-            {
+            "a_e_g1_attack": {
                 "id": "98",
                 "name": "AEG1 Attack",
                 "isModifiable": true,
                 "rawValue": 0,
                 "displayValue": 0.004999999888241291
             },
-            {
+            "a_e_g1_decay": {
                 "id": "99",
                 "name": "AEG1 Decay",
                 "isModifiable": true,
                 "rawValue": 0.6000000238418579,
                 "displayValue": 0.6259999871253967
             },
-            {
+            "a_e_g1_<_vel": {
                 "id": "100",
                 "name": "AEG1 < Vel",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 4
             },
-            {
+            "a_e_g1_sustain": {
                 "id": "101",
                 "name": "AEG1 Sustain",
                 "isModifiable": true,
                 "rawValue": 0.5,
                 "displayValue": 0
             },
-            {
+            "a_e_g1_s_time": {
                 "id": "102",
                 "name": "AEG1 S Time",
                 "isModifiable": true,
                 "rawValue": 1,
                 "displayValue": 1000
             },
-            {
+            "a_e_g1_rel": {
                 "id": "103",
                 "name": "AEG1 Rel",
                 "isModifiable": true,
                 "rawValue": 0.5718053579330444,
                 "displayValue": 0.5
             }
-        ]
+        }
     }
 }
