@@ -1,161 +1,175 @@
-const toSnakeCase = (str) => {
-    return str
-        .replace(/[\s\/\-\.]/g, '_')
-        .replace(/([A-Z])/g, (match) => '_' + match.toLowerCase())
-        .toLowerCase()
-        .replace(/_{2,}/g, '_')
-        .replace(/^_|_$/g, '');
-};
+const TARGET_OSC_SHAPE_PARAM_NAMES = [
+  'OSC1 Shape', 
+  'OSC2 Shape', 
+  'Osc 1 Shape', 
+  'Osc 2 Shape'
+];
 
-const buildTrackProperties = (trackDetails) => {
-    return {
-        index: trackDetails.index,
-        name: trackDetails.name,
-        type: trackDetails.type,
-        isArmed: trackDetails.isArmed,
-        isMuted: trackDetails.isMuted,
-        isSolo: trackDetails.isSolo,
-        isGrouped: trackDetails.isGrouped,
-        volume: trackDetails.volume,
-        panning: trackDetails.panning
-    };
-};
+const toSnakeCase = (str) =>
+  str
+    .replace(/[\s\/\-\.]/g, '_')
+    .replace(/([a-z0-9])([A-Z])/g, '$1_$2')
+    .toLowerCase()
+    .replace(/_{2,}|(^_|_$)/g, '');
 
 const isOnOffSwitch = (detail) => {
-    const options = detail.enumOptions || detail.possibleShapes; 
-    if (Array.isArray(options) && options.length === 2) {
-        const hasOff = options.includes("Off");
-        const hasOn = options.includes("On");
-        return hasOff && hasOn;
-    }
-    return false;
+  const options = detail.enumOptions || detail.possibleShapes;
+  return Array.isArray(options) && options.length === 2 && options.includes("Off") && options.includes("On");
 };
+
+const buildTrackProperties = (trackDetails) => ({
+    index: trackDetails.index,
+    name: trackDetails.name,
+    type: trackDetails.type,
+    isArmed: trackDetails.isArmed,
+    isMuted: trackDetails.isMuted,
+    isSolo: trackDetails.isSolo,
+    isGrouped: trackDetails.isGrouped,
+    volume: trackDetails.volume,
+    panning: trackDetails.panning
+});
 
 const buildTargetedOscShapeDetails = (detail) => {
-    let currentShapeName = 'N/A';
-    let currentIndex = -1;
+  const options = detail.enumOptions;
+  const raw = detail.rawValue;
 
-    if (Array.isArray(detail.enumOptions) && detail.rawValue !== undefined && detail.rawValue !== null) {
-        currentIndex = Math.round(detail.rawValue);
-        if (currentIndex >= 0 && currentIndex < detail.enumOptions.length) {
-            currentShapeName = detail.enumOptions[currentIndex];
-        }
-    } else {
-        currentShapeName = detail.displayValue || 'N/A';
-    }
+  const isValidRaw = Array.isArray(options) && raw != null;
+  const currentIndex = isValidRaw ? Math.round(raw) : -1;
 
-    return {
-        id: detail.id,
-        name: detail.name,
-        isModifiable: detail.isEnabled,
-        rawValue: detail.rawValue,
-        displayValue: detail.displayValue,
-        minValue: detail.minValue,
-        maxValue: detail.maxValue,
-        possibleShapes: detail.enumOptions || [], 
-        currentIndex: currentIndex,
-        currentShapeName: currentShapeName
-    };
+  const currentShapeName =
+    isValidRaw && currentIndex >= 0 && currentIndex < options.length
+      ? options[currentIndex]
+      : detail.displayValue || 'N/A';
+
+  return {
+    id: detail.id,
+    name: detail.name,
+    isModifiable: detail.isEnabled,
+    rawValue: raw,
+    displayValue: detail.displayValue,
+    minValue: detail.minValue,
+    maxValue: detail.maxValue,
+    possibleShapes: options || [],
+    currentIndex,
+    currentShapeName,
+  };
 };
 
-const buildStandardParameterDetails = (detail) => {
-    const result = {
-        id: detail.id,
-        name: detail.name,
-        isModifiable: detail.isEnabled,
-        rawValue: detail.rawValue,
-        displayValue: detail.displayValue,
-        minValue: detail.minValue,
-        maxValue: detail.maxValue
-    };
-    if (detail.enumOptions && detail.enumOptions.length > 0) {
-        result.enumOptions = detail.enumOptions;
-        result.currentValueItem = detail.currentValueItem;
-    }
-    return result;
+const buildStandardParameterDetails = (detail) => ({
+    id: detail.id,
+    name: detail.name,
+    isModifiable: detail.isEnabled,
+    rawValue: detail.rawValue,
+    displayValue: detail.displayValue,
+    minValue: detail.minValue,
+    maxValue: detail.maxValue,
+    ...(detail.enumOptions?.length > 0
+        ? {
+            enumOptions: detail.enumOptions,
+            currentValueItem: detail.currentValueItem,
+          }
+        : {}),
+});
+
+const getComponentPrefixes = (component, num) => {
+    if (component === 'F') return [`FEG${num}`];
+    if (component === 'AMP') return [`AEG${num}`, `A${num}`];
+    if (component === 'OSC') return [`PEG${num}`, `O${num}`];
+    return [];
 };
 
-const generateComponentMaps = (allParametersData) => {
-    const componentStatusMap = new Map();
-    const onOffSwitches = {};
-    for (const detail of allParametersData) {
-        if (isOnOffSwitch(detail)) {
-            const switchInfo = {
-                id: detail.id,
-                name: detail.name,
-                status: detail.currentValueItem || detail.currentShapeName,
-                rawValue: detail.rawValue
-            };
-            const snakeCaseName = toSnakeCase(detail.name);
-            onOffSwitches[snakeCaseName] = switchInfo;
-            componentStatusMap.set(detail.name, switchInfo);
-        }
+const getMatchPrefixes = (switchName) => {
+    let basePrefix = switchName.replace(' On/Off', '').trim();
+    let prefixes = [basePrefix];
+
+    const num = basePrefix.slice(-1);
+    const component = basePrefix.slice(0, -1);
+
+    if (num === '1' || num === '2') {
+        prefixes.push(...getComponentPrefixes(component, num));
     }
-    return { componentStatusMap, onOffSwitches };
+
+    return prefixes;
 };
 
 const shouldIncludeParameterProgrammatic = (isVerbose, structuredDetail, componentStatusMap) => {
     const paramName = structuredDetail.name;
     if (isVerbose || paramName === 'Device On') return true;
 
-    let governingSwitchStatus = null;
-    let foundGoverningSwitch = false;
-    for (const [switchName, switchDetail] of componentStatusMap.entries()) {
-        if (switchName === 'Device On') continue;
-        let basePrefix = switchName.replace(' On/Off', '').trim();
-        let prefixesToCheck = [basePrefix];
-        if (basePrefix.endsWith('1') || basePrefix.endsWith('2')) {
-            const num = basePrefix.slice(-1);
-            const component = basePrefix.slice(0, -1);
-            if (component === 'F') {
-                prefixesToCheck.push(`FEG${num}`);
-            } else if (component === 'AMP') {
-                prefixesToCheck.push(`AEG${num}`);
-                prefixesToCheck.push(`A${num}`);
-            } else if (component === 'OSC') {
-                prefixesToCheck.push(`PEG${num}`);
-                prefixesToCheck.push(`O${num}`);
-            }
-        }
-        const isMatch = prefixesToCheck.some(prefix => paramName.startsWith(prefix) && paramName !== switchName);
-        if (isMatch) {
-            foundGoverningSwitch = true;
-            governingSwitchStatus = switchDetail.status;
-            break;
-        }
+    const governingSwitchDetail = Array.from(componentStatusMap.entries()).find(([switchName, switchDetail]) => {
+        if (switchName === 'Device On') return false;
+
+        const prefixes = getMatchPrefixes(switchName);
+        return prefixes.some(prefix => paramName.startsWith(prefix) && paramName !== switchName);
+    });
+
+    if (governingSwitchDetail) {
+        const [, switchDetail] = governingSwitchDetail;
+        return switchDetail.status !== 'Off';
     }
-    if (foundGoverningSwitch && governingSwitchStatus === 'Off') return false;
     return true;
 };
 
-export const processTrackAndDeviceDetails = (trackDetails, deviceDetails, isVerbose = false) => {
-    const trackData = buildTrackProperties(trackDetails);
-    let deviceData = null;
-    if (deviceDetails) {
-        const allStructuredDetails = [];
-        const targetOscShapeParams = ['OSC1 Shape', 'OSC2 Shape', 'Osc 1 Shape', 'Osc 2 Shape'];
-        for (const detail of deviceDetails.allParameters) {
-            const isOscShape = targetOscShapeParams.includes(detail.name);
-            allStructuredDetails.push(isOscShape ? buildTargetedOscShapeDetails(detail) : buildStandardParameterDetails(detail));
-        }
-        const { componentStatusMap, onOffSwitches } = generateComponentMaps(allStructuredDetails);
-        const parametersMap = {};
-        const filteredParametersData = allStructuredDetails
-            .filter(detail => !isOnOffSwitch(detail))
-            .filter(detail => shouldIncludeParameterProgrammatic(isVerbose, detail, componentStatusMap));
-        filteredParametersData.forEach(detail => {
-            const snakeCaseName = toSnakeCase(detail.name);
-            parametersMap[snakeCaseName] = detail;
+const generateComponentMaps = (allParametersData) => {
+  const componentStatusMap = new Map();
+  const onOffSwitches = {};
+
+  allParametersData
+    .filter(isOnOffSwitch)
+    .forEach(detail => {
+      const switchInfo = {
+        id: detail.id,
+        name: detail.name,
+        status: detail.currentValueItem || detail.currentShapeName,
+        rawValue: detail.rawValue
+      };
+
+      const snakeCaseName = toSnakeCase(detail.name);
+      onOffSwitches[snakeCaseName] = switchInfo;
+      componentStatusMap.set(detail.name, switchInfo);
+    });
+
+  return { componentStatusMap, onOffSwitches };
+};
+
+const filterAndMapParameters = (allStructuredDetails, componentStatusMap, isVerbose) => {
+    const parametersMap = {};
+
+    allStructuredDetails
+        .filter(detail => !isOnOffSwitch(detail))
+        .filter(detail => shouldIncludeParameterProgrammatic(isVerbose, detail, componentStatusMap))
+        .forEach(detail => {
+            parametersMap[toSnakeCase(detail.name)] = detail;
         });
-        deviceData = {
-            name: deviceDetails.name,
-            class: deviceDetails.class,
-            isActive: deviceDetails.isActive,
-            totalParameters: deviceDetails.allParameters.length,
-            onOffSwitches: onOffSwitches,
-            parameters: parametersMap
-        };
-    }
+
+    return parametersMap;
+};
+
+const structureDeviceParameters = (allParameters, isVerbose) => {
+
+    const allStructuredDetails = allParameters.map(detail => {
+        const isOscShape = TARGET_OSC_SHAPE_PARAM_NAMES.includes(detail.name);
+        return isOscShape ? buildTargetedOscShapeDetails(detail) : buildStandardParameterDetails(detail);
+    });
+
+    const { componentStatusMap, onOffSwitches } = generateComponentMaps(allStructuredDetails);
+
+    const parametersMap = filterAndMapParameters(allStructuredDetails, componentStatusMap, isVerbose);
+
+    return { componentStatusMap, onOffSwitches, parametersMap };
+};
+
+const calculateFilterSummary = (totalParameters, onOffSwitches, parameters) => {
+    const displayedCount = Object.keys(parameters).length;
+    const totalSwitches = Object.keys(onOffSwitches).length;
+    const totalParamsExcludingSwitches = totalParameters - totalSwitches;
+    const hiddenCount = totalParamsExcludingSwitches - displayedCount;
+
+    return { displayedCount, hiddenCount };
+};
+
+const logOutput = (trackData, deviceData, isVerbose) => {
+
     console.log(`\n--- TRACK DETAILS (Index ${trackData.index}) ---`);
     console.log(`Track Name: ${trackData.name}`);
     console.log(`Track Type: ${trackData.type}`);
@@ -165,28 +179,59 @@ export const processTrackAndDeviceDetails = (trackDetails, deviceDetails, isVerb
     console.log(`Part of a Group: ${trackData.isGrouped}`);
     console.log(`Volume (Raw Value): ${trackData.volume.toFixed(4)}`);
     console.log(`Panning (Raw Value): ${trackData.panning.toFixed(4)}`);
+
     if (deviceData) {
+        const { onOffSwitches, totalParameters, parameters } = deviceData;
+
         console.log(`\n--- FIRST DEVICE DETAILS ---`);
         console.log(`Device Name: ${deviceData.name}`);
         console.log(`Device Class: ${deviceData.class}`);
         console.log(`Is Device Active: ${deviceData.isActive}`);
-        console.log(`Total Parameters: ${deviceData.totalParameters}`);
+        console.log(`Total Parameters: ${totalParameters}`);
+
         console.log(`\n--- ON/OFF SWITCHES STATUS ---`);
-        Object.keys(deviceData.onOffSwitches).forEach(key => {
-            const sw = deviceData.onOffSwitches[key];
-            console.log(`- ${key} (${sw.name}): **${sw.status}**`);
+        Object.values(onOffSwitches).forEach(sw => {
+            console.log(`- ${toSnakeCase(sw.name)} (${sw.name}): **${sw.status}**`);
         });
-        const displayedCount = Object.keys(deviceData.parameters).length;
-        const totalParamsExcludingSwitches = deviceData.totalParameters - Object.keys(deviceData.onOffSwitches).length;
-        const hiddenCount = totalParamsExcludingSwitches - displayedCount;
-        if (isVerbose) {
-            console.log(`\nRemaining Parameters Displayed: ${displayedCount} (VERBOSE MODE: All shown)`);
-        } else {
-            console.log(`\nRemaining Parameters Displayed: ${displayedCount} (STANDARD MODE: Hiding ${hiddenCount} 'Off' component parameters)`);
-        }
+
+        const { displayedCount, hiddenCount } = calculateFilterSummary(
+            totalParameters, 
+            onOffSwitches, 
+            parameters
+        );
+
+        const mode = isVerbose ? 
+            `VERBOSE MODE: All shown` : 
+            `STANDARD MODE: Hiding ${hiddenCount} 'Off' component parameters`;
+
+        console.log(`\nRemaining Parameters Displayed: ${displayedCount} (${mode})`);
         console.log(`(Filtered parameter details included in the JSON output, keyed by snake_case name.)`);
     } else {
-        console.log(`\nNo device found at index 0 on track: ${trackDetails.name}`);
+        console.log(`\nNo device found on track: ${trackData.name}`);
     }
+};
+
+export const processTrackAndDeviceDetails = (trackDetails, deviceDetails, isVerbose = false) => {
+    const trackData = buildTrackProperties(trackDetails);
+    let deviceData = null;
+
+    if (deviceDetails) {
+        const { onOffSwitches, parametersMap } = structureDeviceParameters(
+            deviceDetails.allParameters, 
+            isVerbose
+        );
+
+        deviceData = {
+            name: deviceDetails.name,
+            class: deviceDetails.class,
+            isActive: deviceDetails.isActive,
+            totalParameters: deviceDetails.allParameters.length,
+            onOffSwitches,
+            parameters: parametersMap
+        };
+    }
+
+    logOutput(trackData, deviceData, isVerbose);
+
     return { track: trackData, device: deviceData };
 };
