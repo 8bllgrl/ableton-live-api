@@ -14,18 +14,16 @@ const isVerboseMode = () => {
     return process.argv.includes('--verbose');
 };
 
-const writeToJsonFile = (data) => {
-    const filename = 'track_device_details.json';
-    const filePath = path.join(process.cwd(), filename);
+const writeToJsonFile = (data, isVerbose = false) => {
+    const filename = `track_device_details${isVerbose ? '-verbose' : ''}.json`;
     try {
-        const jsonString = JSON.stringify(data, null, 4);
-        fs.writeFileSync(filePath, jsonString);
-        console.log(`\n✅ Successfully wrote data to **${filename}** at ${filePath}`);
-    } catch (error) {
-        console.error(`\n❌ Error writing to JSON file ${filename}:`);
-        console.error(error);
+        fs.writeFileSync(path.join(process.cwd(), filename), JSON.stringify(data, null, 4));
+        console.log(`\n✅ Wrote data to ${filename}`);
+    } catch (e) {
+        console.error(`\n❌ Error writing ${filename}:`, e);
     }
 };
+
 
 const connectToLive = async () => {
     try {
@@ -150,7 +148,7 @@ const getTrackDetailsAndFirstDevice = async () => {
         const trackDetails = await getTrackDetails(track, 1); 
         const deviceDetails = await getDeviceAndParameterDetails(firstDevice);
         const structuredData = processTrackAndDeviceDetails(trackDetails, deviceDetails, isVerbose);
-        writeToJsonFile(structuredData);
+        writeToJsonFile(structuredData, isVerbose);
 
         console.log('✧･ﾟ: *✧･ﾟ:*═════════════*･ﾟ✧*:･ﾟ✧');
 
