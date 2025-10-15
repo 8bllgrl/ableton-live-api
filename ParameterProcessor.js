@@ -1,5 +1,3 @@
-// ParameterProcessor.js
-
 export class ParameterProcessor {
     static TARGET_OSC_SHAPE_PARAM_NAMES = [
         'OSC1 Shape', 
@@ -10,8 +8,6 @@ export class ParameterProcessor {
 
     /**
      * Checks if a parameter detail represents a simple 'On/Off' switch.
-     * @param {object} detail - The raw parameter detail object.
-     * @returns {boolean} True if it's an On/Off switch.
      */
     isOnOffSwitch(detail) {
         const options = detail.enumOptions || detail.possibleShapes;
@@ -23,8 +19,6 @@ export class ParameterProcessor {
 
     /**
      * Structures details for parameters identified as OSC Shape selectors.
-     * @param {object} detail - The raw parameter detail object.
-     * @returns {object} The structured OSC shape details.
      */
     processOscShapeDetails(detail) {
         const options = detail.enumOptions;
@@ -53,8 +47,6 @@ export class ParameterProcessor {
 
     /**
      * Structures details for standard parameters.
-     * @param {object} detail - The raw parameter detail object.
-     * @returns {object} The structured standard parameter details.
      */
     processStandardDetails(detail) {
         return {
@@ -76,8 +68,6 @@ export class ParameterProcessor {
 
     /**
      * Maps and structures all device parameters, separating switches from others.
-     * @param {Array<object>} allParameters - The array of raw device parameters.
-     * @returns {{allStructuredDetails: Array<object>, onOffSwitches: object, componentStatusMap: Map<string, object>}}
      */
     structureParameters(allParameters) {
         const allStructuredDetails = allParameters.map(detail => {
@@ -88,8 +78,6 @@ export class ParameterProcessor {
         const componentStatusMap = new Map();
         const onOffSwitches = {};
 
-        // Use DataFormatter's utility after it's imported, for now use a placeholder.
-        // In the final `output.js`, we'll need to instantiate and pass the DataFormatter.
         const toSnakeCasePlaceholder = (str) => 
             str.toLowerCase().replace(/\s/g, '_').replace(/[^a-z0-9_]/g, '');
 

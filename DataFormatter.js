@@ -1,12 +1,6 @@
-// DataFormatter.js
 import { ParameterProcessor } from './ParameterProcessor.js';
 
 export class DataFormatter {
-    /**
-     * Converts a string to snake_case.
-     * @param {string} str - The input string.
-     * @returns {string} The snake_cased string.
-     */
     toSnakeCase(str) {
         return str
             .replace(/[\s\/\-\.]/g, '_')
@@ -64,11 +58,7 @@ export class DataFormatter {
     }
 
     /**
-     * Determines if a parameter should be included in the final output based on its governing switch.
-     * @param {boolean} isVerbose - Whether to include all parameters.
-     * @param {object} structuredDetail - The structured parameter detail.
-     * @param {Map<string, object>} componentStatusMap - Map of all On/Off switches.
-     * @returns {boolean} True if the parameter should be included.
+     * Determines if a parameter should be included in the final output.
      */
     shouldIncludeParameter(isVerbose, structuredDetail, componentStatusMap) {
         const paramName = structuredDetail.name;
@@ -93,7 +83,6 @@ export class DataFormatter {
      * @param {Array<object>} allStructuredDetails - All structured parameter details.
      * @param {Map<string, object>} componentStatusMap - Map of all On/Off switches.
      * @param {boolean} isVerbose - Whether to apply the filter.
-     * @returns {object} The filtered parameters map.
      */
     filterAndMapParameters(allStructuredDetails, componentStatusMap, isVerbose) {
         const parametersMap = {};
@@ -168,10 +157,6 @@ export class DataFormatter {
 
     /**
      * Main entry point to process track and device details.
-     * @param {object} trackDetails - Raw track details.
-     * @param {object | null} deviceDetails - Raw device details.
-     * @param {boolean} isVerbose - Flag for verbose mode.
-     * @returns {object} The final structured data.
      */
     process(trackDetails, deviceDetails, isVerbose = false) {
         const trackData = this.buildTrackProperties(trackDetails);
